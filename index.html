@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CP Danang Resort - Menu</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+
+        header {
+            background-color: #123b32;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* Main content */
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 15px;
+        }
+
+        .restaurant {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .restaurant h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .restaurant a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #123b32;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .restaurant a:hover {
+            background-color: #246c58;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                margin: 15px auto;
+            }
+
+            .restaurant {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+        <h1>CP Danang Resort</h1>
+        <p>Restaurant & Resort Menu</p>
+    </header>
+
+    <!-- Restaurant Menu -->
+
+    <main class="container">
+
+        <div class="restaurant">
+            <h2>Guest Directory</h2>
+
+            <a href="/menu/guest-directory/">
+                View Menu
+            </a>
+        </div>
+
+        <div class="restaurant">
+            <h2>À La Carte</h2>
+
+            <a href="/menu/ala-carte/">
+                View Menu
+            </a>
+        </div>
+
+        <div class="restaurant">
+            <h2>Chopstix</h2>
+
+            <a href="/menu/chopstix/">
+                View Menu
+            </a>
+        </div>
+
+        <div class="restaurant">
+            <h2>Hai Gang</h2>
+
+            <a href="/menu/hai-gang/">
+                View Menu
+            </a>
+        </div>
+
+        <div class="restaurant">
+            <h2>Room Service</h2>
+
+            <a href="/menu/room-service/">
+                View Menu
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© CP Danang Resort</p>
+    </footer>
+
+</body>
+</html>
