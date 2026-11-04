@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu_Chopstix</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="src/js.js"></script>
+    <link rel="stylesheet" href="src/css.css">
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="" alt="" class="modal-images">
+            <p class="modal-text"></p>
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="RS"></div>
+        </div>
+    </div>
+
+    <div class="data"></div>
+
+    <div id="scrollToTop" onclick="scrollToTop()"> <span class="glyphicon glyphicon-circle-arrow-up"></span></div>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+          var scrollToTopButton = document.getElementById("scrollToTop");
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopButton.style.display = "block";
+          } else {
+            scrollToTopButton.style.display = "none";
+          }
+        }
+    
+        function scrollToTop() {
+          var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+          if (currentPosition > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, currentPosition - currentPosition / 8);
+          }
+        }
+
+        $(document).ready(function () {
+            $(".data").load("src/data.html");
+            var modal = document.getElementById("myModal");
+            var span = document.getElementsByClassName("close")[0];
+
+            span.onclick = function () {
+                $(".modal-text").html('');
+                modal.style.display = "none";
+                $('html').css('overflow', 'auto');
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    $(".modal-text").html('');
+                    modal.style.display = "none";
+                    $('html').css('overflow', 'auto');
+                }
+            }
+
+            $('.menu-post').click(function (event) {
+                modal.style.display = "block";
+                var imageId = $(this).attr('id');
+                var content = $('.' + imageId + '_content').html();
+                var imageFiles = $('.' + imageId + '_images').html();
+                
+                $('html').css('overflow', 'hidden');
+                $(".modal-images").attr('src', 'images/' + imageFiles);
+                $(".modal-text").html(content);
+
+                if(content  == null && imageFiles == null) {
+                    $(".modal-text").html('Chưa Có Thông Tin Món Ăn !');
+                }
+
+                event.preventDefault();
+            });
+        });
+    </script>
+</body>
+
+</html>
