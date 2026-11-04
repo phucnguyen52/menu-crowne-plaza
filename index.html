@@ -1,171 +1,543 @@
 
 <!DOCTYPE html>
-<html lang="vi">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#9e2471">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <title>CP Danang Resort - Menu</title>
+  <title>Crowne Plaza Danang | Restaurant & Resort Menu</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+  <style>
+    :root {
+      --primary: #9e2471;
+      --primary-dark: #70164f;
+      --primary-deep: #4d1038;
+      --cream: #fffaf7;
+      --gold: #d9b887;
+      --text: #382332;
+      --muted: #766873;
+    }
 
-        /* Header */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background-color: #123b32;
-            color: white;
-            text-align: center;
-            padding: 35px 15px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+    }
 
-        header p {
-            margin-top: 10px;
-            font-size: 16px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        /* Main content */
+    /* HERO */
+    .hero {
+      min-height: 570px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(78, 12, 54, .96) 0%, rgba(117, 20, 79, .78) 48%, rgba(40, 15, 35, .15) 100%),
+        url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85")
+        center / cover;
+    }
 
-        .container {
-            max-width: 700px;
-            margin: 30px auto;
-            padding: 15px;
-        }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      bottom: -90px;
+      width: 110%;
+      height: 150px;
+      background: var(--cream);
+      border-top: 7px solid var(--gold);
+      border-radius: 50% 50% 0 0;
+      transform: rotate(-2deg);
+    }
 
-        .restaurant {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
+    .hero-inner {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+      padding: 70px 0 125px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .restaurant h2 {
-            margin-top: 0;
-            font-size: 20px;
-        }
+    .brand {
+      display: inline-block;
+      margin-bottom: 54px;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
 
-        .restaurant a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #123b32;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+    .brand strong {
+      display: block;
+      font-size: 25px;
+      letter-spacing: 5px;
+      margin-bottom: 8px;
+    }
 
-        .restaurant a:hover {
-            background-color: #246c58;
-        }
+    .brand span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      opacity: .9;
+    }
 
-        /* Footer */
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.12;
+      font-weight: 600;
+      max-width: 760px;
+      margin-bottom: 18px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 14px;
-        }
+    .hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(18px, 2.5vw, 27px);
+      margin-bottom: 30px;
+    }
 
-        /* Mobile */
+    .hero-line {
+      width: 115px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 22px;
+    }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 24px;
-            }
+    .hero-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
 
-            .container {
-                margin: 15px auto;
-            }
+    /* MENU SECTION */
+    .menus {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+      padding: 15px 0 85px;
+    }
 
-            .restaurant {
-                padding: 15px;
-            }
-        }
-    </style>
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
 
+    .eyebrow {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--primary-dark);
+      font-size: clamp(34px, 4.5vw, 55px);
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .menu-card {
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--primary-dark);
+      box-shadow: 0 12px 28px rgba(78, 12, 54, .15);
+      isolation: isolate;
+    }
+
+    .menu-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+      z-index: -2;
+    }
+
+    .menu-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(40, 10, 30, 0) 20%,
+        rgba(80, 10, 52, .25) 43%,
+        rgba(112, 22, 79, .97) 100%
+      );
+      z-index: -1;
+    }
+
+    .menu-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .menu-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 26px;
+      color: white;
+    }
+
+    .menu-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 44px;
+      padding: 0 22px;
+      border: 1px solid rgba(255, 255, 255, .85);
+      border-radius: 30px;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    .menu-button:hover {
+      background: white;
+      color: var(--primary-dark);
+    }
+
+    .menu-card:last-child {
+      grid-column: 1 / -1;
+      min-height: 250px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+      padding: 34px 20px;
+      border-top: 5px solid var(--gold);
+    }
+
+    footer p {
+      font-size: 12px;
+      line-height: 1.9;
+      letter-spacing: 1px;
+    }
+
+    footer .enjoy {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    /* TABLET */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 500px;
+        background-position: 58% center;
+      }
+
+      .hero-inner {
+        width: 88%;
+        padding: 55px 0 115px;
+      }
+
+      .brand {
+        margin-bottom: 42px;
+      }
+
+      .hero h1 {
+        max-width: 560px;
+      }
+
+      .hero-label {
+        letter-spacing: 3px;
+      }
+
+      .menus {
+        width: 88%;
+        padding-bottom: 60px;
+      }
+
+      .menu-grid {
+        gap: 18px;
+      }
+
+      .menu-card {
+        min-height: 260px;
+      }
+
+      .menu-content {
+        padding: 20px;
+      }
+
+      .menu-content h3 {
+        font-size: 23px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 560px) {
+      .hero {
+        min-height: 490px;
+        background-position: 62% center;
+      }
+
+      .hero-inner {
+        width: 88%;
+        padding: 38px 0 100px;
+      }
+
+      .brand {
+        margin-bottom: 48px;
+        letter-spacing: 2px;
+      }
+
+      .brand strong {
+        font-size: 19px;
+        letter-spacing: 3px;
+      }
+
+      .brand span {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 10vw, 48px);
+        max-width: 360px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+        line-height: 1.5;
+        max-width: 320px;
+      }
+
+      .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+      }
+
+      .hero::after {
+        bottom: -105px;
+        height: 140px;
+      }
+
+      .menus {
+        width: 88%;
+        padding-top: 5px;
+        padding-bottom: 45px;
+      }
+
+      .section-heading {
+        margin-bottom: 28px;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .section-heading h2 {
+        font-size: 34px;
+      }
+
+      .section-heading p {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .menu-card,
+      .menu-card:last-child {
+        grid-column: auto;
+        min-height: 235px;
+        border-radius: 14px;
+      }
+
+      .menu-content {
+        padding: 20px;
+      }
+
+      .menu-content h3 {
+        font-size: 25px;
+        margin-bottom: 12px;
+      }
+
+      .menu-button {
+        min-height: 44px;
+        padding: 0 20px;
+        font-size: 11px;
+      }
+
+      footer {
+        padding: 27px 15px;
+      }
+
+      footer p {
+        font-size: 10px;
+        letter-spacing: .5px;
+      }
+    }
+
+    /* SMALL MOBILE */
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .menu-card,
+      .menu-card:last-child {
+        min-height: 210px;
+      }
+
+      .menu-content h3 {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand">
+        <strong>CROWNE PLAZA</strong>
+        <span>DANANG · AN IHG HOTEL</span>
+      </div>
 
-    <!-- Header -->
+      <h1>Crowne Plaza Danang</h1>
+      <p class="hero-subtitle">International upscale hotel brand of IHG</p>
+      <div class="hero-line"></div>
+      <p class="hero-label">Restaurant & Resort Menu</p>
+    </div>
+  </header>
 
-    <header>
-        <h1>CP Danang Resort</h1>
-        <p>Restaurant & Resort Menu</p>
-    </header>
+  <main class="menus">
+    <div class="section-heading">
+      <div class="eyebrow">Discover our dining</div>
+      <h2>Explore Our Menus</h2>
+      <p>Choose your destination and enjoy a memorable dining experience.</p>
+    </div>
 
-    <!-- Restaurant Menu -->
-
-    <main class="container">
-
-        <div class="restaurant">
-            <h2>Guest Directory</h2>
-
-            <a href="/menu/guest-directory/">
-                View Menu
-            </a>
+    <div class="menu-grid">
+      <a class="menu-card" href="/menu/guest-directory/">
+        <img
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+          alt="Resort guest directory"
+          loading="lazy"
+        >
+        <div class="menu-content">
+          <h3>Guest Directory</h3>
+          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
         </div>
+      </a>
 
-        <div class="restaurant">
-            <h2>À La Carte</h2>
-
-            <a href="/menu/ala-carte/">
-                View Menu
-            </a>
+      <a class="menu-card" href="/menu/ala-carte/">
+        <img
+          src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=1000&q=85"
+          alt="À La Carte dining"
+          loading="lazy"
+        >
+        <div class="menu-content">
+          <h3>À La Carte</h3>
+          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
         </div>
+      </a>
 
-        <div class="restaurant">
-            <h2>Chopstix</h2>
-
-            <a href="/menu/chopstix/">
-                View Menu
-            </a>
+      <a class="menu-card" href="/menu/chopstix/">
+        <img
+          src="https://tuhoctiengtrung.vn/wp-content/uploads/2018/09/hinh-anh-nhung-mon-noi-tieng-o-trung-quoc-3.jpg?auto=format&fit=crop&w=1000&q=85"
+          alt="Chopstix Asian cuisine"
+          loading="lazy"
+        >
+        <div class="menu-content">
+          <h3>Chopstix</h3>
+          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
         </div>
+      </a>
 
-        <div class="restaurant">
-            <h2>Hai Gang</h2>
-
-            <a href="/menu/hai-gang/">
-                View Menu
-            </a>
+      <a class="menu-card" href="/menu/hai-gang/">
+        <img
+          src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1000&q=85"
+          alt="Hai Gang restaurant"
+          loading="lazy"
+        >
+        <div class="menu-content">
+          <h3>Hai Gang</h3>
+          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
         </div>
+      </a>
 
-        <div class="restaurant">
-            <h2>Room Service</h2>
-
-            <a href="/menu/room-service/">
-                View Menu
-            </a>
+      <a class="menu-card" href="/menu/room-service/">
+        <img
+          src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85"
+          alt="Room service dining"
+          loading="lazy"
+        >
+        <div class="menu-content">
+          <h3>Room Service</h3>
+          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
         </div>
+      </a>
+    </div>
+  </main>
 
-    </main>
-
-    <!-- Footer -->
-
-    <footer>
-        <p>© CP Danang Resort</p>
-    </footer>
-
+  <footer>
+    <p>© 2026 Crowne Plaza Danang · An IHG Hotel</p>
+    <p class="enjoy">Enjoy Your Stay</p>
+  </footer>
 </body>
 </html>
