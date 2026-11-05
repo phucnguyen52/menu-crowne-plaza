@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#9e2471">
 
   <title>Crowne Plaza Danang | Restaurant & Resort Menu</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,10 @@
       text-decoration: none;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
       min-height: 570px;
       position: relative;
@@ -53,9 +56,15 @@
       align-items: center;
       overflow: hidden;
       color: white;
+
       background:
-        linear-gradient(90deg, rgba(78, 12, 54, .96) 0%, rgba(117, 20, 79, .78) 48%, rgba(40, 15, 35, .15) 100%),
-        url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85")
+        linear-gradient(
+          90deg,
+          rgba(78, 12, 54, .75) 0%,
+          rgba(117, 20, 79, .55) 48%,
+          rgba(40, 15, 35, .08) 100%
+        ),
+        url("/img/home/KHACHSAN.jpg")
         center / cover;
     }
 
@@ -70,6 +79,7 @@
       border-top: 7px solid var(--gold);
       border-radius: 50% 50% 0 0;
       transform: rotate(-2deg);
+      pointer-events: none;
     }
 
     .hero-inner {
@@ -133,7 +143,196 @@
       text-transform: uppercase;
     }
 
-    /* MENU SECTION */
+    /* =========================
+       LANGUAGE DROPDOWN
+    ========================= */
+
+    .language-switcher {
+      position: absolute;
+      top: 28px;
+      right: 5%;
+      z-index: 10;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .language-button {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      min-width: 155px;
+      padding: 10px 14px;
+
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 30px;
+
+      background: rgba(70, 15, 50, .45);
+      color: #fff;
+
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .language-button:hover {
+      background: rgba(112, 22, 79, .8);
+    }
+
+    .language-flag {
+      display: block;
+      width: 22px;
+      height: 16px;
+      object-fit: cover;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .language-name {
+      flex: 1;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .language-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 14px;
+      height: 14px;
+      margin-left: auto;
+      flex-shrink: 0;
+
+      color: #fff;
+    }
+
+    .language-arrow svg {
+      display: block;
+      width: 14px;
+      height: 14px;
+
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+
+      transition: transform 0.25s ease;
+    }
+
+    /* Xoay mũi tên khi dropdown mở */
+    .language-switcher.open .language-arrow svg {
+      transform: rotate(180deg);
+    }
+
+    .language-options {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+
+      min-width: 155px;
+      padding: 6px;
+
+      background: rgba(70, 15, 50, .96);
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 14px;
+
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+      backdrop-filter: blur(10px);
+    }
+
+    .language-switcher.open .language-options {
+      display: block;
+    }
+
+    .language-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      width: 100%;
+      padding: 10px;
+
+      border: none;
+      border-radius: 8px;
+
+      background: transparent;
+      color: #fff;
+
+      font-family: inherit;
+      font-size: 12px;
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .language-option:hover,
+    .language-option.active {
+      background: rgba(255, 255, 255, .15);
+    }
+.floating-back {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 30px;
+
+  background: rgba(70, 15, 50, 0.85);
+  color: #fff;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.floating-back:hover {
+  background: rgba(112, 22, 79, 0.95);
+  transform: translateY(-2px);
+}
+
+.floating-back svg {
+  width: 16px;
+  height: 16px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 560px) {
+  .floating-back {
+    left: 16px;
+    bottom: 16px;
+    padding: 11px 15px;
+    font-size: 11px;
+  }
+}
+    /* =========================
+       MENU SECTION
+    ========================= */
+
     .menus {
       width: min(1180px, 90%);
       margin: 0 auto;
@@ -199,12 +398,14 @@
       content: "";
       position: absolute;
       inset: 0;
+
       background: linear-gradient(
         180deg,
         rgba(40, 10, 30, 0) 20%,
-        rgba(80, 10, 52, .25) 43%,
-        rgba(112, 22, 79, .97) 100%
+        rgba(80, 10, 52, .20) 43%,
+        rgba(112, 22, 79, .88) 100%
       );
+
       z-index: -1;
     }
 
@@ -233,14 +434,18 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
+
       min-height: 44px;
       padding: 0 22px;
+
       border: 1px solid rgba(255, 255, 255, .85);
       border-radius: 30px;
+
       color: white;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 1px;
+
       transition: background .25s ease, color .25s ease;
     }
 
@@ -254,9 +459,17 @@
       min-height: 250px;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+      );
+
       color: white;
       text-align: center;
       padding: 34px 20px;
@@ -276,7 +489,10 @@
       margin-top: 5px;
     }
 
-    /* TABLET */
+    /* =========================
+       TABLET
+    ========================= */
+
     @media (max-width: 768px) {
       .hero {
         min-height: 500px;
@@ -322,7 +538,10 @@
       }
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 560px) {
       .hero {
         min-height: 490px;
@@ -331,11 +550,26 @@
 
       .hero-inner {
         width: 88%;
-        padding: 38px 0 100px;
+        padding: 75px 0 100px;
       }
 
+      .language-switcher {
+    top: 18px;
+    right: 6%;
+  }
+
+  .language-button {
+    min-width: 140px;
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .language-options {
+    min-width: 140px;
+  }
+
       .brand {
-        margin-bottom: 48px;
+        margin-bottom: 38px;
         letter-spacing: 2px;
       }
 
@@ -432,7 +666,10 @@
       }
     }
 
-    /* SMALL MOBILE */
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
     @media (max-width: 360px) {
       .hero h1 {
         font-size: 34px;
@@ -449,95 +686,447 @@
     }
   </style>
 </head>
-
+ 
 <body>
+
+  <!-- HERO -->
   <header class="hero">
+
+    <!-- LANGUAGE DROPDOWN -->
+    <div class="language-switcher">
+  <button
+    class="language-button"
+    id="languageButton"
+    type="button"
+    aria-expanded="false"
+  >
+    <img
+      class="language-flag"
+      id="selectedFlag"
+      src="https://flagcdn.com/w40/gb.png"
+      alt="English"
+    >
+    <span class="language-name" id="selectedLanguage">English</span>
+    <span class="language-arrow" aria-hidden="true">
+  <svg viewBox="0 0 24 24">
+    <path d="m6 9 6 6 6-6"></path>
+  </svg>
+</span>
+  </button>
+
+  <div class="language-options" id="languageOptions">
+    <button type="button" class="language-option" data-lang="vn">
+      <img class="language-flag" src="https://flagcdn.com/w40/vn.png" alt="Vietnam">
+      <span>Tiếng Việt</span>
+    </button>
+
+    <button type="button" class="language-option" data-lang="cn">
+      <img class="language-flag" src="https://flagcdn.com/w40/cn.png" alt="China">
+      <span>中文</span>
+    </button>
+
+    <button type="button" class="language-option" data-lang="kr">
+      <img class="language-flag" src="https://flagcdn.com/w40/kr.png" alt="Korea">
+      <span>한국어</span>
+    </button>
+
+    <button type="button" class="language-option" data-lang="en">
+      <img class="language-flag" src="https://flagcdn.com/w40/gb.png" alt="English">
+      <span>English</span>
+    </button>
+  </div>
+</div>
+
     <div class="hero-inner">
+
       <div class="brand">
         <strong>CROWNE PLAZA</strong>
         <span>DANANG · AN IHG HOTEL</span>
       </div>
 
       <h1>Crowne Plaza Danang</h1>
-      <p class="hero-subtitle">International upscale hotel brand of IHG</p>
+
+      <p class="hero-subtitle">
+        International upscale hotel brand of IHG
+      </p>
+
       <div class="hero-line"></div>
-      <p class="hero-label">Restaurant & Resort Menu</p>
+
+      <p class="hero-label">
+        Restaurant & Resort Menu
+      </p>
+
     </div>
   </header>
 
+  <!-- MENUS -->
   <main class="menus">
+
     <div class="section-heading">
       <div class="eyebrow">Discover our dining</div>
+
       <h2>Explore Our Menus</h2>
-      <p>Choose your destination and enjoy a memorable dining experience.</p>
+
+      <p>
+        Choose your destination and enjoy a memorable dining experience.
+      </p>
     </div>
 
     <div class="menu-grid">
-      <a class="menu-card" href="/menu/guest-directory/">
+
+      <!-- GUEST DIRECTORY -->
+      <a
+        class="menu-card"
+        href="/menu/guest-directory/"
+        data-base-href="/menu/guest-directory/"
+      >
         <img
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
           alt="Resort guest directory"
           loading="lazy"
         >
+
         <div class="menu-content">
           <h3>Guest Directory</h3>
-          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
+
+          <span class="menu-button">
+            VIEW MENU
+            <span aria-hidden="true">→</span>
+          </span>
         </div>
       </a>
 
-      <a class="menu-card" href="/menu/ala-carte/">
+      <!-- À LA CARTE -->
+      <a
+        class="menu-card"
+        href="/menu/ala-carte/"
+        data-base-href="/menu/ala-carte/"
+      >
         <img
-          src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=1000&q=85"
+          src="/img/home/FRESH.jpg"
           alt="À La Carte dining"
           loading="lazy"
         >
+
         <div class="menu-content">
           <h3>À La Carte</h3>
-          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
+
+          <span class="menu-button">
+            VIEW MENU
+            <span aria-hidden="true">→</span>
+          </span>
         </div>
       </a>
 
-      <a class="menu-card" href="/menu/chopstix/">
+      <!-- CHOPSTIX -->
+      <a
+        class="menu-card"
+        href="/menu/chopstix/"
+        data-base-href="/menu/chopstix/"
+      >
         <img
-          src="https://tuhoctiengtrung.vn/wp-content/uploads/2018/09/hinh-anh-nhung-mon-noi-tieng-o-trung-quoc-3.jpg?auto=format&fit=crop&w=1000&q=85"
+          src="/img/home/CHOPSTIX.jpg"
           alt="Chopstix Asian cuisine"
           loading="lazy"
         >
+
         <div class="menu-content">
           <h3>Chopstix</h3>
-          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
+
+          <span class="menu-button">
+            VIEW MENU
+            <span aria-hidden="true">→</span>
+          </span>
         </div>
       </a>
 
-      <a class="menu-card" href="/menu/hai-gang/">
+      <!-- HAI GANG -->
+      <a
+        class="menu-card"
+        href="/menu/hai-gang/"
+        data-base-href="/menu/hai-gang/"
+      >
         <img
-          src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1000&q=85"
+          src="/img/home/HAIGANG.jpg"
           alt="Hai Gang restaurant"
           loading="lazy"
         >
+
         <div class="menu-content">
           <h3>Hai Gang</h3>
-          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
+
+          <span class="menu-button">
+            VIEW MENU
+            <span aria-hidden="true">→</span>
+          </span>
         </div>
       </a>
 
-      <a class="menu-card" href="/menu/room-service/">
+      <!-- ROOM SERVICE -->
+      <a
+        class="menu-card"
+        href="/menu/room-service/"
+        data-base-href="/menu/room-service/"
+      >
         <img
-          src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85"
+          src="/img/home/ROOMSERVICE.jpg"
           alt="Room service dining"
           loading="lazy"
         >
+
         <div class="menu-content">
           <h3>Room Service</h3>
-          <span class="menu-button">VIEW MENU <span aria-hidden="true">→</span></span>
+
+          <span class="menu-button">
+            VIEW MENU
+            <span aria-hidden="true">→</span>
+          </span>
         </div>
       </a>
+
     </div>
+   
+</button>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 Crowne Plaza Danang · An IHG Hotel</p>
     <p class="enjoy">Enjoy Your Stay</p>
   </footer>
+
+  <!-- LANGUAGE SCRIPT -->
+  <script>
+  const translations = {
+    vn: {
+      subtitle: "Thương hiệu khách sạn cao cấp quốc tế thuộc IHG",
+      menuLabel: "Thực đơn Nhà hàng & Khu nghỉ dưỡng",
+      eyebrow: "Khám phá ẩm thực",
+      heading: "Khám Phá Thực Đơn",
+      description: "Lựa chọn điểm đến và tận hưởng trải nghiệm ẩm thực đáng nhớ.",
+      guest: "Thông Tin Khách Sạn",
+      alaCarte: "Thực Đơn À La Carte",
+      chopstix: "Chopstix",
+      haiGang: "Hai Gang",
+      roomService: "Dịch Vụ Ăn Tại Phòng",
+      button: "XEM THỰC ĐƠN",
+      footer: "© 2026 Crowne Plaza Danang · Khách sạn thuộc IHG",
+      enjoy: "Chúc Quý khách có kỳ nghỉ tuyệt vời"
+    },
+
+    cn: {
+      subtitle: "IHG 旗下国际高端酒店品牌",
+      menuLabel: "餐厅及度假村菜单",
+      eyebrow: "探索美食",
+      heading: "探索我们的菜单",
+      description: "选择您喜爱的餐饮目的地，享受难忘的用餐体验。",
+      guest: "宾客指南",
+      alaCarte: "单点菜单",
+      chopstix: "Chopstix",
+      haiGang: "Hai Gang",
+      roomService: "客房送餐服务",
+      button: "查看菜单",
+      footer: "© 2026 Crowne Plaza Danang · IHG 旗下酒店",
+      enjoy: "祝您入住愉快"
+    },
+
+    kr: {
+      subtitle: "IHG의 국제적인 업스케일 호텔 브랜드",
+      menuLabel: "레스토랑 & 리조트 메뉴",
+      eyebrow: "다양한 다이닝 경험",
+      heading: "메뉴 둘러보기",
+      description: "원하시는 다이닝 장소를 선택하고 특별한 식사 경험을 즐겨보세요.",
+      guest: "고객 안내",
+      alaCarte: "알라카르트 메뉴",
+      chopstix: "Chopstix",
+      haiGang: "Hai Gang",
+      roomService: "룸서비스",
+      button: "메뉴 보기",
+      footer: "© 2026 Crowne Plaza Danang · IHG 호텔",
+      enjoy: "즐거운 투숙 되세요"
+    },
+
+    en: {
+      subtitle: "International upscale hotel brand of IHG",
+      menuLabel: "Restaurant & Resort Menu",
+      eyebrow: "Discover our dining",
+      heading: "Explore Our Menus",
+      description: "Choose your destination and enjoy a memorable dining experience.",
+      guest: "Guest Directory",
+      alaCarte: "À La Carte",
+      chopstix: "Chopstix",
+      haiGang: "Hai Gang",
+      roomService: "Room Service",
+      button: "VIEW MENU",
+      footer: "© 2026 Crowne Plaza Danang · An IHG Hotel",
+      enjoy: "Enjoy Your Stay"
+    }
+  };
+
+  // Thông tin hiển thị trong dropdown
+ const languageDisplay = {
+  vn: {
+    flag: "https://flagcdn.com/w40/vn.png",
+    name: "Tiếng Việt",
+    alt: "Vietnam"
+  },
+  cn: {
+    flag: "https://flagcdn.com/w40/cn.png",
+    name: "中文",
+    alt: "China"
+  },
+  kr: {
+    flag: "https://flagcdn.com/w40/kr.png",
+    name: "한국어",
+    alt: "Korea"
+  },
+  en: {
+    flag: "https://flagcdn.com/w40/gb.png",
+    name: "English",
+    alt: "United Kingdom"
+  }
+};
+
+  // Các thành phần dropdown
+  const languageSwitcher = document.querySelector(".language-switcher");
+  const languageButton = document.getElementById("languageButton");
+  const selectedFlag = document.getElementById("selectedFlag");
+  const selectedLanguage = document.getElementById("selectedLanguage");
+
+  // Cập nhật cờ và tên ngôn ngữ trên nút dropdown
+ function updateLanguageDropdown(language) {
+  const selected = languageDisplay[language] || languageDisplay.en;
+
+  selectedFlag.src = selected.flag;
+  selectedFlag.alt = selected.alt;
+  selectedLanguage.textContent = selected.name;
+
+  document.querySelectorAll(".language-option").forEach(option => {
+    option.classList.toggle(
+      "active",
+      option.dataset.lang === language
+    );
+  });
+}
+
+  // Hàm thay đổi ngôn ngữ website
+  function changeLanguage(language) {
+    const text = translations[language];
+
+    if (!text) return;
+
+    // Cập nhật nội dung trang
+    document.querySelector(".hero-subtitle").textContent = text.subtitle;
+    document.querySelector(".hero-label").textContent = text.menuLabel;
+    document.querySelector(".eyebrow").textContent = text.eyebrow;
+    document.querySelector(".section-heading h2").textContent = text.heading;
+    document.querySelector(".section-heading p").textContent = text.description;
+
+    // Cập nhật tên menu
+    const menuTitles = [
+      text.guest,
+      text.alaCarte,
+      text.chopstix,
+      text.haiGang,
+      text.roomService
+    ];
+
+    document.querySelectorAll(".menu-card").forEach((card, index) => {
+      const title = card.querySelector("h3");
+      const button = card.querySelector(".menu-button");
+
+      if (title) {
+        title.textContent = menuTitles[index];
+      }
+
+      if (button) {
+        button.innerHTML = `
+          ${text.button}
+          <span aria-hidden="true">→</span>
+        `;
+      }
+
+      // Tạo đường dẫn menu theo ngôn ngữ
+      const baseHref = card.dataset.baseHref;
+
+      if (baseHref) {
+        card.href = `${baseHref}${language}/`;
+      }
+    });
+
+    // Cập nhật footer
+    const footerText = document.querySelector("footer p");
+    const enjoyText = document.querySelector("footer .enjoy");
+
+    if (footerText) {
+      footerText.textContent = text.footer;
+    }
+
+    if (enjoyText) {
+      enjoyText.textContent = text.enjoy;
+    }
+
+    // Cập nhật ngôn ngữ của trang
+    document.documentElement.lang = language;
+
+    // Lưu lựa chọn ngôn ngữ
+    localStorage.setItem("preferredLanguage", language);
+  }
+
+  // Mở / đóng dropdown khi nhấn nút
+  languageButton.addEventListener("click", () => {
+    const isOpen = languageSwitcher.classList.toggle("open");
+
+    languageButton.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Khi khách chọn một ngôn ngữ
+  document.querySelectorAll(".language-option").forEach(option => {
+    option.addEventListener("click", () => {
+      const language = option.dataset.lang;
+
+      // Dịch nội dung website
+      changeLanguage(language);
+
+      // Cập nhật cờ và tên ngôn ngữ
+      updateLanguageDropdown(language);
+
+      // Đóng dropdown
+      languageSwitcher.classList.remove("open");
+      languageButton.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Đóng dropdown khi click bên ngoài
+  document.addEventListener("click", event => {
+    if (!languageSwitcher.contains(event.target)) {
+      languageSwitcher.classList.remove("open");
+      languageButton.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Đọc ngôn ngữ đã lưu, mặc định là English
+  const savedLanguage =
+    localStorage.getItem("preferredLanguage") || "en";
+
+  // Áp dụng ngôn ngữ khi tải trang
+  changeLanguage(savedLanguage);
+  updateLanguageDropdown(savedLanguage);
+</script>
+
+<!-- <button class="floating-back" id="backButton" type="button" aria-label="Go back">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M15 18l-6-6 6-6"></path>
+  </svg>
+  <span>Back</span>
+  <script>
+  document.getElementById("backButton").addEventListener("click", function () {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = "/";
+    }
+  });
+</script> -->
 </body>
 </html>

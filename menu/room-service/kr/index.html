@@ -1,94 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu_Chopstix</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="src/js.js"></script>
-    <link rel="stylesheet" href="src/css.css">
-</head>
+    <link rel="stylesheet" href="src/css.css" />
+    <style>
+      /* Nút Quay lại */
+      .floating-back {
+        position: fixed !important;
+        left: 24px !important;
+        bottom: 24px !important;
+        z-index: 999999 !important;
 
-<body>
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+
+        padding: 12px 18px !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.7) !important;
+        border-radius: 30px !important;
+
+        background: rgba(70, 15, 50, 0.92) !important;
+        color: #ffffff !important;
+
+        font-family: Arial, sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+
+        cursor: pointer !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+        backdrop-filter: blur(8px);
+
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .floating-back:hover {
+        background: rgba(112, 22, 79, 0.98) !important;
+        transform: translateY(-2px);
+      }
+
+      .floating-back svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      @media (max-width: 600px) {
+        .floating-back {
+          left: 16px !important;
+          bottom: 16px !important;
+          padding: 11px 15px !important;
+          font-size: 12px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
     <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img src="" alt="" class="modal-images">
-            <p class="modal-text"></p>
-        </div>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="" alt="" class="modal-images" />
+        <p class="modal-text"></p>
+      </div>
     </div>
 
     <div class="slider-container">
-        <div class="slider">
-            <div class="RS"></div>
-        </div>
+      <div class="slider">
+        <div class="RS"></div>
+      </div>
     </div>
+    <button
+      class="floating-back"
+      id="backButton"
+      type="button"
+      aria-label="Go back"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6"></path>
+      </svg>
 
+      <span id="backButtonText">Back</span>
+    </button>
     <div class="data"></div>
 
-    <div id="scrollToTop" onclick="scrollToTop()"> <span class="glyphicon glyphicon-circle-arrow-up"></span></div>
+    <div id="scrollToTop" onclick="scrollToTop()">
+      <span class="glyphicon glyphicon-circle-arrow-up"></span>
+    </div>
 
     <script>
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-          var scrollToTopButton = document.getElementById("scrollToTop");
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            scrollToTopButton.style.display = "block";
-          } else {
-            scrollToTopButton.style.display = "none";
-          }
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        var scrollToTopButton = document.getElementById("scrollToTop");
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
         }
-    
-        function scrollToTop() {
-          var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
-          if (currentPosition > 0) {
-            window.requestAnimationFrame(scrollToTop);
-            window.scrollTo(0, currentPosition - currentPosition / 8);
-          }
+      }
+
+      function scrollToTop() {
+        var currentPosition =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentPosition > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, currentPosition - currentPosition / 8);
         }
+      }
 
-        $(document).ready(function () {
-            $(".data").load("src/data.html");
-            var modal = document.getElementById("myModal");
-            var span = document.getElementsByClassName("close")[0];
+      $(document).ready(function () {
+        $(".data").load("src/data.html");
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
 
-            span.onclick = function () {
-                $(".modal-text").html('');
-                modal.style.display = "none";
-                $('html').css('overflow', 'auto');
-            }
+        span.onclick = function () {
+          $(".modal-text").html("");
+          modal.style.display = "none";
+          $("html").css("overflow", "auto");
+        };
 
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    $(".modal-text").html('');
-                    modal.style.display = "none";
-                    $('html').css('overflow', 'auto');
-                }
-            }
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            $(".modal-text").html("");
+            modal.style.display = "none";
+            $("html").css("overflow", "auto");
+          }
+        };
 
-            $('.menu-post').click(function (event) {
-                modal.style.display = "block";
-                var imageId = $(this).attr('id');
-                var content = $('.' + imageId + '_content').html();
-                var imageFiles = $('.' + imageId + '_images').html();
-                
-                $('html').css('overflow', 'hidden');
-                $(".modal-images").attr('src', 'images/' + imageFiles);
-                $(".modal-text").html(content);
+        $(".menu-post").click(function (event) {
+          modal.style.display = "block";
+          var imageId = $(this).attr("id");
+          var content = $("." + imageId + "_content").html();
+          var imageFiles = $("." + imageId + "_images").html();
 
-                if(content  == null && imageFiles == null) {
-                    $(".modal-text").html('Chưa Có Thông Tin Món Ăn !');
-                }
+          $("html").css("overflow", "hidden");
+          $(".modal-images").attr("src", "images/" + imageFiles);
+          $(".modal-text").html(content);
 
-                event.preventDefault();
-            });
+          if (content == null && imageFiles == null) {
+            $(".modal-text").html("Chưa Có Thông Tin Món Ăn !");
+          }
+
+          event.preventDefault();
         });
+      });
     </script>
-</body>
+    <script>
+      const backButton = document.getElementById("backButton");
+      const backButtonText = document.getElementById("backButtonText");
 
+      // Lấy ngôn ngữ từ đường dẫn hiện tại
+      function getCurrentLanguage() {
+        const path = window.location.pathname.toLowerCase();
+
+        if (path.includes("/vn/")) return "vn";
+        if (path.includes("/cn/")) return "cn";
+        if (path.includes("/kr/")) return "kr";
+        if (path.includes("/en/")) return "en";
+
+        return "en";
+      }
+
+      // Nội dung nút theo ngôn ngữ
+      const backTranslations = {
+        vn: "Quay lại",
+        en: "Back",
+        cn: "返回",
+        kr: "뒤로",
+      };
+
+      const currentLanguage = getCurrentLanguage();
+
+      backButtonText.textContent = backTranslations[currentLanguage];
+
+      // Xử lý khi nhấn nút
+      backButton.addEventListener("click", function () {
+        const previousPage = document.referrer;
+        const currentDomain = window.location.origin;
+
+        // Kiểm tra trang trước có thuộc cùng website không
+        if (previousPage && previousPage.startsWith(currentDomain)) {
+          const previousPath = new URL(previousPage).pathname;
+
+          // Trang trước là trang chủ
+          if (previousPath === "/") {
+            window.location.href = "/";
+          }
+
+          // Trang trước là Hotel Directory
+          else if (previousPath === "/menu/ala-carte/") {
+            window.location.href = "/menu/ala-carte/";
+          }
+
+          // Các trường hợp khác: quay về trang trước
+          else {
+            window.location.href = previousPage;
+          }
+        }
+
+        // Nếu người dùng mở trực tiếp bằng QR
+        else {
+          window.location.href = "/menu/guest-directory/";
+        }
+      });
+    </script>
+  </body>
 </html>

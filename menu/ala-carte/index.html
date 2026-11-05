@@ -1,0 +1,155 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu_Ala_Carte</title>
+
+    <style>
+      .image-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .image-grid a {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-grid img {
+        width: 50%;
+        height: auto;
+        display: block;
+      }
+
+      /* Nút Back cố định */
+      .floating-back {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 999;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        padding: 12px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 30px;
+
+        background: rgba(70, 15, 50, 0.88);
+        color: #fff;
+
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .floating-back:hover {
+        background: rgba(112, 22, 79, 0.96);
+        transform: translateY(-2px);
+      }
+
+      .floating-back svg {
+        width: 16px;
+        height: 16px;
+
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      @media (max-width: 600px) {
+        .image-grid a {
+          width: 100%;
+        }
+
+        .image-grid img {
+          width: 100%;
+        }
+
+        .floating-back {
+          left: 16px;
+          bottom: 16px;
+          padding: 11px 15px;
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="image-grid">
+      <a href=""><img src="1.jpg" alt="Ảnh 1" /></a>
+      <a href="vn/"><img src="2.jpg" alt="Ảnh 2" /></a>
+      <a href="en/"><img src="3.jpg" alt="Ảnh 3" /></a>
+      <a href="cn/"><img src="4.jpg" alt="Ảnh 4" /></a>
+      <a href="kr/"><img src="5.jpg" alt="Ảnh 5" /></a>
+    </div>
+
+    <!-- Nút Back -->
+    <button
+      class="floating-back"
+      id="backButton"
+      type="button"
+      aria-label="Go back"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6"></path>
+      </svg>
+      <span id="backButtonText">Back</span>
+    </button>
+
+    <script>
+      // Bản dịch nút Back
+      const backTranslations = {
+        vn: "Quay lại",
+        cn: "返回",
+        kr: "뒤로",
+        en: "Back",
+      };
+
+      // Xác định ngôn ngữ từ URL hiện tại
+      function getCurrentLanguage() {
+        const path = window.location.pathname.toLowerCase();
+
+        if (path.includes("/vn/")) return "vn";
+        if (path.includes("/cn/")) return "cn";
+        if (path.includes("/kr/")) return "kr";
+        if (path.includes("/en/")) return "en";
+
+        return "en";
+      }
+
+      // Cập nhật chữ trên nút Back
+      const currentLanguage = getCurrentLanguage();
+
+      document.getElementById("backButtonText").textContent =
+        backTranslations[currentLanguage];
+
+      // Xử lý nút Back
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.location.href = "/";
+        });
+    </script>
+  </body>
+</html>

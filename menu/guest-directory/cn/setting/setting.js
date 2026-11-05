@@ -1,2 +1,2 @@
 const countImages = 24;
-const nameImages = 'GDCN';
+const nameImages = "GDCN";

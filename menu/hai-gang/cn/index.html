@@ -1,22 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotel_Directory</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+    />
     <link rel="stylesheet" href="./setting/css.css" />
-</head>
-<body>
+    <style>
+      /* Nút Quay lại */
+      .floating-back {
+        position: fixed !important;
+        left: 24px !important;
+        bottom: 24px !important;
+        z-index: 999999 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+
+        padding: 12px 18px !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.7) !important;
+        border-radius: 30px !important;
+
+        background: rgba(70, 15, 50, 0.92) !important;
+        color: #ffffff !important;
+
+        font-family: Arial, sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+
+        cursor: pointer !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+        backdrop-filter: blur(8px);
+
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .floating-back:hover {
+        background: rgba(112, 22, 79, 0.98) !important;
+        transform: translateY(-2px);
+      }
+
+      .floating-back svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      @media (max-width: 600px) {
+        .floating-back {
+          left: 16px !important;
+          bottom: 16px !important;
+          padding: 11px 15px !important;
+          font-size: 12px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <div class="slider-container">
-        <div class="slider"></div>
+      <div class="slider"></div>
     </div>
+    <button
+      class="floating-back"
+      id="backButton"
+      type="button"
+      aria-label="Go back"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6"></path>
+      </svg>
+
+      <span id="backButtonText">Back</span>
+    </button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="./setting/setting.js"></script>
     <script src="./setting/script.js"></script>
-</body>
+    <script>
+      const backButton = document.getElementById("backButton");
+      const backButtonText = document.getElementById("backButtonText");
+
+      // Lấy ngôn ngữ từ đường dẫn hiện tại
+      function getCurrentLanguage() {
+        const path = window.location.pathname.toLowerCase();
+
+        if (path.includes("/vn/")) return "vn";
+        if (path.includes("/cn/")) return "cn";
+        if (path.includes("/kr/")) return "kr";
+        if (path.includes("/en/")) return "en";
+
+        return "en";
+      }
+
+      // Nội dung nút theo ngôn ngữ
+      const backTranslations = {
+        vn: "Quay lại",
+        en: "Back",
+        cn: "返回",
+        kr: "뒤로",
+      };
+
+      const currentLanguage = getCurrentLanguage();
+
+      backButtonText.textContent = backTranslations[currentLanguage];
+
+      // Xử lý khi nhấn nút
+      backButton.addEventListener("click", function () {
+        const previousPage = document.referrer;
+        const currentDomain = window.location.origin;
+
+        // Kiểm tra trang trước có thuộc cùng website không
+        if (previousPage && previousPage.startsWith(currentDomain)) {
+          const previousPath = new URL(previousPage).pathname;
+
+          // Trang trước là trang chủ
+          if (previousPath === "/") {
+            window.location.href = "/";
+          }
+
+          // Trang trước là Hotel Directory
+          else if (previousPath === "/menu/ala-carte/") {
+            window.location.href = "/menu/ala-carte/";
+          }
+
+          // Các trường hợp khác: quay về trang trước
+          else {
+            window.location.href = previousPage;
+          }
+        }
+
+        // Nếu người dùng mở trực tiếp bằng QR
+        else {
+          window.location.href = "/menu/guest-directory/";
+        }
+      });
+    </script>
+  </body>
 </html>

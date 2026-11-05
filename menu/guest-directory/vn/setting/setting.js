@@ -1,2 +1,2 @@
 const countImages = 25;
-const nameImages = 'GDVN';
+const nameImages = "GDVN";
