@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel_Directory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="./setting/css.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
+    <style>
+       
+.floating-back {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 8px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 30px;
+
+    background: rgba(70, 15, 50, 0.88);
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.floating-back:hover {
+    background: rgba(112, 22, 79, 0.96);
+    transform: translateY(-2px);
+}
+
+/* Font Awesome icon */
+.floating-back i {
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .image-grid a {
+        width: 100%;
+    }
+
+    .image-grid img {
+        width: 100%;
+    }
+
+    .floating-back {
+        left: 16px;
+        bottom: 16px;
+        padding: 7px 11px;
+        font-size: 10px;
+        gap: 6px;
+    }
+
+    .floating-back i {
+        font-size: 12px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider"></div>
+    </div>
+   <button
+  class="floating-back"
+  id="backButton"
+  type="button"
+  aria-label="Go back"
+>
+  <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>
+  <span id="backButtonText"></span>
+</button>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="./setting/setting.js"></script>
+    <script src="./setting/script.js"></script>
+     <script>
+      // Bản dịch nút Back
+      const backTranslations = {
+        vn: "Quay lại",
+        cn: "返回",
+        kr: "뒤로",
+        en: "Back",
+      };
+
+      // Xác định ngôn ngữ từ URL hiện tại
+      function getCurrentLanguage() {
+        const path = window.location.pathname.toLowerCase();
+
+        if (path.includes("/vn/")) return "vn";
+        if (path.includes("/cn/")) return "cn";
+        if (path.includes("/kr/")) return "kr";
+        if (path.includes("/en/")) return "en";
+
+        return "en";
+      }
+
+      // Cập nhật chữ trên nút Back
+    //   const currentLanguage = getCurrentLanguage();
+
+    //   document.getElementById("backButtonText").textContent =
+    //     backTranslations[currentLanguage];
+
+      // Xử lý nút Back
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.location.href = "/";
+        });
+    </script>
+</body>
+</html>
