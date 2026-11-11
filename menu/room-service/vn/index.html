@@ -114,10 +114,8 @@
       };
       function scrollFunction() {
         var scrollToTopButton = document.getElementById("scrollToTop");
-        if (
-          document.body.scrollTop > 20 ||
-          document.documentElement.scrollTop > 20
-        ) {
+
+        if (window.scrollY > 20) {
           scrollToTopButton.style.display = "block";
         } else {
           scrollToTopButton.style.display = "none";
@@ -125,12 +123,10 @@
       }
 
       function scrollToTop() {
-        var currentPosition =
-          document.documentElement.scrollTop || document.body.scrollTop;
-        if (currentPosition > 0) {
-          window.requestAnimationFrame(scrollToTop);
-          window.scrollTo(0, currentPosition - currentPosition / 8);
-        }
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       }
 
       $(document).ready(function () {

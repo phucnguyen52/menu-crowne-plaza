@@ -430,104 +430,112 @@
     ========================= */
 
     .footer {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 50px 4% 35px;
-      font-family: "Montserrat", sans-serif;
-    }
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 30px 4% 20px;
+    font-family: "Montserrat", sans-serif;
+}
 
-    .footer-container {
-      display: grid;
-      grid-template-columns: 1.1fr 1.5fr 0.9fr;
-      gap: 45px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1.5fr 0.9fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 28px;
-    }
+/* LOGO */
 
-    .footer-logo {
-      width: 100%;
-      max-width: 310px;
-      object-fit: contain;
-    }
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
 
-    .footer-ihg {
-      width: 250px;
-      max-width: 90%;
-      object-fit: contain;
-      color: white;
-    }
+.footer-logo {
+    width: 100%;
+    max-width: 240px;
+    object-fit: contain;
+}
 
-    .best-price {
-      color: white;
-      display: flex;
-      flex-direction: column;
-      font-size: 17px;
-      line-height: 1.25;
-    }
+.footer-ihg {
+    width: 190px;
+    max-width: 90%;
+    object-fit: contain;
+    color: white;
+}
 
-    .best-price strong {
-      font-size: 27px;
-    }
+/* HOTEL INFORMATION */
 
-    .best-price span {
-      font-size: 13px;
-    }
+.best-price {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    line-height: 1.25;
+}
 
-    .footer-info h3 {
-      font-size: 19px;
-      font-weight: 600;
-      margin: 5px 0 22px;
-      color: white;
-    }
+.best-price strong {
+    font-size: 23px;
+}
 
-    .footer-info ul {
-      padding-left: 20px;
-      margin: 0;
-    }
+.best-price span {
+    font-size: 12px;
+}
 
-    .footer-info li {
-      padding-left: 0;
-      margin-bottom: 15px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.85);
-    }
+.footer-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0 15px;
+    color: white;
+}
 
-    .footer-info a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      transition: color 0.25s ease;
-    }
+.footer-info ul {
+    padding-left: 20px;
+    margin: 0;
+}
 
-    .footer-info a:hover {
-      color: black;
-    }
+.footer-info li {
+    padding-left: 0;
+    margin-bottom: 9px;
+    line-height: 1.4;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+}
 
-    .footer-social {
-      display: flex;
-      gap: 18px;
-      margin-top: 25px;
-    }
+.footer-info a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
 
-    .footer-social a {
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 25px;
-      font-weight: bold;
-      transition: all 0.25s ease;
-    }
+.footer-info a:hover {
+    color: black;
+}
 
-    .footer-social a:hover {
-      color: black;
-      transform: translateY(-3px);
-    }
+/* SOCIAL MEDIA */
 
-    
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 21px;
+    font-weight: bold;
+    transition: all 0.25s ease;
+}
+
+.footer-social a:hover {
+    color: black;
+    transform: translateY(-3px);
+}
+
+/* REVIEW */
+
 .footer-review {
     padding: 5px 10px;
     max-width: 350px;
@@ -535,30 +543,30 @@
 
 .footer-review h3 {
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
-    margin: 0 0 22px;
+    margin: 0 0 15px;
 }
 
 .footer-review-icon {
-    font-size: 28px;
+    font-size: 23px;
     color: #fff;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .footer-review-title {
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
-    line-height: 1.6;
-    margin: 0 0 12px;
+    line-height: 1.5;
+    margin: 0 0 8px;
 }
 
 .footer-review-description {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 13px;
-    line-height: 1.8;
-    margin: 0 0 22px;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 0 0 15px;
 }
 
 .review-button {
@@ -568,62 +576,77 @@
     background: white;
     color: var(--primary-dark);
     text-decoration: none;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    padding: 11px 16px;
+    padding: 9px 13px;
     border-radius: 3px;
     transition: all 0.25s ease;
 }
 
 .review-button:hover {
-
     color: black;
     transform: translateY(-2px);
 }
 
 .review-button i {
-    font-size: 12px;
+    font-size: 11px;
 }
 
-.footer-bottom {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 25px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: 14px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.8);
-    }
+/* FOOTER BOTTOM */
 
-    .footer-bottom p {
-      margin: 3px 0;
-    }
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-bottom p {
+    margin: 3px 0;
+}
     /* =========================
        TABLET
     ========================= */
 
     @media (max-width: 768px) {
       .footer {
-        padding: 35px 20px;
+        padding: 30px 20px 20px;
       }
 
       .footer-container {
-        grid-template-columns: 1fr;
-        gap: 35px;
+          grid-template-columns: 1fr;
+          gap: 25px;
       }
 
       .footer-brand {
-        align-items: center;
+          align-items: center;
+          gap: 15px;
+      }
+
+      .footer-logo {
+          max-width: 220px;
+      }
+
+      .footer-ihg {
+          width: 170px;
       }
 
       .footer-info,
       .footer-review {
-        text-align: left;
+          text-align: left;
+      }
+
+      .footer-review {
+          max-width: 100%;
+          padding: 5px 0;
       }
 
       .footer-bottom {
-        margin-top: 35px;
-        font-size: 12px;
+          margin-top: 25px;
+          font-size: 11px;
       }
 
       .hero {
@@ -675,6 +698,59 @@
     ========================= */
 
     @media (max-width: 560px) {
+      .footer {
+        padding: 25px 18px 18px;
+      }
+
+      .footer-container {
+          gap: 22px;
+      }
+
+      .footer-logo {
+          max-width: 190px;
+      }
+
+      .footer-ihg {
+          width: 150px;
+      }
+
+      .footer-info h3 {
+          font-size: 15px;
+          margin-bottom: 12px;
+      }
+
+      .footer-info li {
+          font-size: 11px;
+          margin-bottom: 8px;
+      }
+
+      .footer-social {
+          gap: 15px;
+          margin-top: 15px;
+      }
+
+      .footer-social a {
+          font-size: 20px;
+      }
+
+      .footer-review h3 {
+          font-size: 14px;
+      }
+
+      .footer-review-title {
+          font-size: 14px;
+      }
+
+      .footer-review-description {
+          font-size: 11px;
+      }
+
+      .footer-bottom {
+          margin-top: 20px;
+          padding-top: 12px;
+          font-size: 10px;
+          line-height: 1.6;
+      }
       .floating-back {
         left: 16px;
         bottom: 16px;

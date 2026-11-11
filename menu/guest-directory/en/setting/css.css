@@ -26,3 +26,54 @@ html {
   height: 100%;
   object-fit: contain;
 }
+
+/* =========================
+   MOBILE SLIDER
+========================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .slider-container {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .slider,
+    .slider .slick-list {
+        width: 100%;
+        height: 100vh !important;
+        height: 100dvh !important;
+    }
+
+    .slider .slick-slide {
+        width: 100%;
+        height: 100vh !important;
+        height: 100dvh !important;
+    }
+
+    .slider .slick-slide > div,
+    .slider .slick-slide a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slider-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
