@@ -1,2 +1,2 @@
-const countImages = 14;
+const countImages = 23;
 const nameImages = "ALA";

@@ -1,1508 +1,1510 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#9e2471">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9e2471" />
 
-  <title>Crowne Plaza Danang | Restaurant & Resort Menu</title>
-  <link rel="icon" type="image/png" href="/favicon.jpg">
+    <title>Crowne Plaza Danang | Restaurant & Resort Menu</title>
+    <link rel="icon" type="image/png" href="/favicon.jpg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
-  <style>
-    :root {
-      --primary: #9e2471;
-      --primary-dark: #70164f;
-      --primary-deep: #4d1038;
-      --cream: #fffaf7;
-      --gold: #d9b887;
-      --text: #382332;
-      --muted: #766873;
-    }
+    <style>
+      :root {
+        --primary: #9e2471;
+        --primary-dark: #70164f;
+        --primary-deep: #4d1038;
+        --cream: #fffaf7;
+        --gold: #d9b887;
+        --text: #382332;
+        --muted: #766873;
+      }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      font-family: "Montserrat", sans-serif;
-      color: var(--text);
-      background: var(--cream);
-    }
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text);
+        background: var(--cream);
+      }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-    /* =========================
+      /* =========================
        HERO
     ========================= */
 
-    .hero {
-      min-height: 570px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      color: white;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(78, 12, 54, .75) 0%,
-          rgba(117, 20, 79, .55) 48%,
-          rgba(40, 15, 35, .08) 100%
-        ),
-        url("/img/home/KHACHSAN.jpg")
-        center / cover;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      left: -5%;
-      bottom: -90px;
-      width: 110%;
-      height: 150px;
-      background: var(--cream);
-      border-top: 7px solid var(--gold);
-      border-radius: 50% 50% 0 0;
-      transform: rotate(-2deg);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      width: min(1180px, 90%);
-      margin: 0 auto;
-      padding: 70px 0 125px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .brand {
-      display: inline-block;
-      margin-bottom: 54px;
-      letter-spacing: 4px;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .brand strong {
-      display: block;
-      font-size: 25px;
-      letter-spacing: 5px;
-      margin-bottom: 8px;
-    }
-
-    .brand span {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 3px;
-      opacity: .9;
-    }
-
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.12;
-      font-weight: 600;
-      max-width: 760px;
-      margin-bottom: 18px;
-    }
-
-    .hero-subtitle {
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      font-size: clamp(18px, 2.5vw, 27px);
-      margin-bottom: 30px;
-    }
-
-    .hero-line {
-      width: 115px;
-      height: 3px;
-      background: var(--gold);
-      margin-bottom: 22px;
-    }
-
-    .hero-label {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       LANGUAGE DROPDOWN
-    ========================= */
-
-    .language-switcher {
-      position: absolute;
-      top: 28px;
-      right: 5%;
-      z-index: 10;
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .language-button {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      min-width: 155px;
-      padding: 10px 14px;
-      border: 1px solid rgba(255, 255, 255, .65);
-      border-radius: 30px;
-      background: rgba(70, 15, 50, .45);
-      color: #fff;
-      font-family: inherit;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      backdrop-filter: blur(8px);
-    }
-
-    .language-button:hover {
-      background: rgba(112, 22, 79, .8);
-    }
-
-    .language-flag {
-      display: block;
-      width: 22px;
-      height: 16px;
-      object-fit: cover;
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-
-    .language-name {
-      flex: 1;
-      text-align: left;
-      white-space: nowrap;
-    }
-
-    .language-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 14px;
-      height: 14px;
-      margin-left: auto;
-      flex-shrink: 0;
-      color: #fff;
-    }
-
-    .language-arrow svg {
-      display: block;
-      width: 14px;
-      height: 14px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: transform 0.25s ease;
-    }
-
-    .language-switcher.open .language-arrow svg {
-      transform: rotate(180deg);
-    }
-
-    .language-options {
-      display: none;
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 0;
-      min-width: 155px;
-      padding: 6px;
-      background: rgba(70, 15, 50, .96);
-      border: 1px solid rgba(255, 255, 255, .25);
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
-      backdrop-filter: blur(10px);
-    }
-
-    .language-switcher.open .language-options {
-      display: block;
-    }
-
-    .language-option {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      background: transparent;
-      color: #fff;
-      font-family: inherit;
-      font-size: 12px;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .language-option:hover,
-    .language-option.active {
-      background: rgba(255, 255, 255, .15);
-    }
-
-    /* =========================
-       FLOATING BACK BUTTON
-    ========================= */
-
-    .floating-back {
-      position: fixed;
-      left: 24px;
-      bottom: 24px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      border-radius: 30px;
-      background: rgba(70, 15, 50, 0.85);
-      color: #fff;
-      font-family: "Montserrat", sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      transition: background 0.25s ease, transform 0.25s ease;
-    }
-
-    .floating-back:hover {
-      background: rgba(112, 22, 79, 0.95);
-      transform: translateY(-2px);
-    }
-
-    .floating-back svg {
-      width: 16px;
-      height: 16px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    /* =========================
-       MENU SECTION
-    ========================= */
-
-    .menus {
-      width: min(1180px, 90%);
-      margin: 0 auto;
-      padding: 15px 0 85px;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 42px;
-    }
-
-    .eyebrow {
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .section-heading h2 {
-      font-family: "Playfair Display", serif;
-      color: var(--primary-dark);
-      font-size: clamp(34px, 4.5vw, 55px);
-      margin-bottom: 14px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.8;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 25px;
-    }
-
-    .menu-card {
-      min-height: 300px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      background: var(--primary-dark);
-      box-shadow: 0 12px 28px rgba(78, 12, 54, .15);
-      isolation: isolate;
-    }
-
-    .menu-card img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .5s ease;
-      z-index: -2;
-    }
-
-    .menu-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(40, 10, 30, 0) 20%,
-        rgba(80, 10, 52, .20) 43%,
-        rgba(112, 22, 79, .88) 100%
-      );
-      z-index: -1;
-    }
-
-    .menu-card:hover img {
-      transform: scale(1.06);
-    }
-
-    .menu-content {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 26px;
-      color: white;
-    }
-
-    .menu-content h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
-
-    .menu-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      min-height: 44px;
-      padding: 0 22px;
-      border: 1px solid rgba(255, 255, 255, .85);
-      border-radius: 30px;
-      color: white;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: background .25s ease, color .25s ease;
-    }
-
-    .menu-button:hover {
-      background: white;
-      color: var(--primary-dark);
-    }
-
-    /* Room Service là thẻ cuối cùng */
-    .menu-card:last-child {
-       grid-column: auto;
-    min-height: 300px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    .footer {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
-    padding: 30px 4% 20px;
-    font-family: "Montserrat", sans-serif;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: 1.1fr 1.5fr 0.9fr;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* LOGO */
-
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-}
-
-.footer-logo {
-    width: 100%;
-    max-width: 240px;
-    object-fit: contain;
-}
-
-.footer-ihg {
-    width: 190px;
-    max-width: 90%;
-    object-fit: contain;
-    color: white;
-}
-
-/* HOTEL INFORMATION */
-
-.best-price {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    font-size: 15px;
-    line-height: 1.25;
-}
-
-.best-price strong {
-    font-size: 23px;
-}
-
-.best-price span {
-    font-size: 12px;
-}
-
-.footer-info h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 5px 0 15px;
-    color: white;
-}
-
-.footer-info ul {
-    padding-left: 20px;
-    margin: 0;
-}
-
-.footer-info li {
-    padding-left: 0;
-    margin-bottom: 9px;
-    line-height: 1.4;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.footer-info a {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    transition: color 0.25s ease;
-}
-
-.footer-info a:hover {
-    color: black;
-}
-
-/* SOCIAL MEDIA */
-
-.footer-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 18px;
-}
-
-.footer-social a {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 21px;
-    font-weight: bold;
-    transition: all 0.25s ease;
-}
-
-.footer-social a:hover {
-    color: black;
-    transform: translateY(-3px);
-}
-
-/* REVIEW */
-
-.footer-review {
-    padding: 5px 10px;
-    max-width: 350px;
-}
-
-.footer-review h3 {
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0 0 15px;
-}
-
-.footer-review-icon {
-    font-size: 23px;
-    color: #fff;
-    margin-bottom: 12px;
-}
-
-.footer-review-title {
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin: 0 0 8px;
-}
-
-.footer-review-description {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 11px;
-    line-height: 1.6;
-    margin: 0 0 15px;
-}
-
-.review-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    color: var(--primary-dark);
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 9px 13px;
-    border-radius: 3px;
-    transition: all 0.25s ease;
-}
-
-.review-button:hover {
-    color: black;
-    transform: translateY(-2px);
-}
-
-.review-button i {
-    font-size: 11px;
-}
-
-/* FOOTER BOTTOM */
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 11px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-bottom p {
-    margin: 3px 0;
-}
-    /* =========================
-       TABLET
-    ========================= */
-
-    @media (max-width: 768px) {
-      .footer {
-        padding: 30px 20px 20px;
-      }
-
-      .footer-container {
-          grid-template-columns: 1fr;
-          gap: 25px;
-      }
-
-      .footer-brand {
-          align-items: center;
-          gap: 15px;
-      }
-
-      .footer-logo {
-          max-width: 220px;
-      }
-
-      .footer-ihg {
-          width: 170px;
-      }
-
-      .footer-info,
-      .footer-review {
-          text-align: left;
-      }
-
-      .footer-review {
-          max-width: 100%;
-          padding: 5px 0;
-      }
-
-      .footer-bottom {
-          margin-top: 25px;
-          font-size: 11px;
-      }
-
       .hero {
-        min-height: 500px;
-        background-position: 58% center;
+        min-height: 570px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        color: white;
+
+        background:
+          linear-gradient(
+            90deg,
+            rgba(78, 12, 54, 0.75) 0%,
+            rgba(117, 20, 79, 0.55) 48%,
+            rgba(40, 15, 35, 0.08) 100%
+          ),
+          url("/img/home/KHACHSAN.jpg") center / cover;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        left: -5%;
+        bottom: -90px;
+        width: 110%;
+        height: 150px;
+        background: var(--cream);
+        border-top: 7px solid var(--gold);
+        border-radius: 50% 50% 0 0;
+        transform: rotate(-2deg);
+        pointer-events: none;
       }
 
       .hero-inner {
-        width: 88%;
-        padding: 55px 0 115px;
+        width: min(1180px, 90%);
+        margin: 0 auto;
+        padding: 70px 0 125px;
+        position: relative;
+        z-index: 1;
       }
 
       .brand {
-        margin-bottom: 42px;
+        display: inline-block;
+        margin-bottom: 54px;
+        letter-spacing: 4px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 25px;
+        letter-spacing: 5px;
+        margin-bottom: 8px;
+      }
+
+      .brand span {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 3px;
+        opacity: 0.9;
       }
 
       .hero h1 {
-        max-width: 560px;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(42px, 6vw, 76px);
+        line-height: 1.12;
+        font-weight: 600;
+        max-width: 760px;
+        margin-bottom: 18px;
+      }
+
+      .hero-subtitle {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: clamp(18px, 2.5vw, 27px);
+        margin-bottom: 30px;
+      }
+
+      .hero-line {
+        width: 115px;
+        height: 3px;
+        background: var(--gold);
+        margin-bottom: 22px;
       }
 
       .hero-label {
-        letter-spacing: 3px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 5px;
+        text-transform: uppercase;
       }
 
+      /* =========================
+       LANGUAGE DROPDOWN
+    ========================= */
+
+      .language-switcher {
+        position: absolute;
+        top: 28px;
+        right: 5%;
+        z-index: 10;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .language-button {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        min-width: 155px;
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 30px;
+        background: rgba(70, 15, 50, 0.45);
+        color: #fff;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+      }
+
+      .language-button:hover {
+        background: rgba(112, 22, 79, 0.8);
+      }
+
+      .language-flag {
+        display: block;
+        width: 22px;
+        height: 16px;
+        object-fit: cover;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      .language-name {
+        flex: 1;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .language-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        margin-left: auto;
+        flex-shrink: 0;
+        color: #fff;
+      }
+
+      .language-arrow svg {
+        display: block;
+        width: 14px;
+        height: 14px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.25s ease;
+      }
+
+      .language-switcher.open .language-arrow svg {
+        transform: rotate(180deg);
+      }
+
+      .language-options {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        min-width: 155px;
+        padding: 6px;
+        background: rgba(70, 15, 50, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+      }
+
+      .language-switcher.open .language-options {
+        display: block;
+      }
+
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        color: #fff;
+        font-family: inherit;
+        font-size: 12px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .language-option:hover,
+      .language-option.active {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      /* =========================
+       FLOATING BACK BUTTON
+    ========================= */
+
+      .floating-back {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 30px;
+        background: rgba(70, 15, 50, 0.85);
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .floating-back:hover {
+        background: rgba(112, 22, 79, 0.95);
+        transform: translateY(-2px);
+      }
+
+      .floating-back svg {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* =========================
+       MENU SECTION
+    ========================= */
+
       .menus {
-        width: 88%;
-        padding-bottom: 60px;
+        width: min(1180px, 90%);
+        margin: 0 auto;
+        padding: 15px 0 85px;
+      }
+
+      .section-heading {
+        text-align: center;
+        margin-bottom: 42px;
+      }
+
+      .eyebrow {
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      .section-heading h2 {
+        font-family: "Playfair Display", serif;
+        color: var(--primary-dark);
+        font-size: clamp(34px, 4.5vw, 55px);
+        margin-bottom: 14px;
+      }
+
+      .section-heading p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+        max-width: 550px;
+        margin: 0 auto;
       }
 
       .menu-grid {
-        gap: 18px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
       }
 
       .menu-card {
-        min-height: 260px;
+        min-height: 300px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+        background: var(--primary-dark);
+        box-shadow: 0 12px 28px rgba(78, 12, 54, 0.15);
+        isolation: isolate;
+      }
+
+      .menu-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        z-index: -2;
+      }
+
+      .menu-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(40, 10, 30, 0) 20%,
+          rgba(80, 10, 52, 0.2) 43%,
+          rgba(112, 22, 79, 0.88) 100%
+        );
+        z-index: -1;
+      }
+
+      .menu-card:hover img {
+        transform: scale(1.06);
       }
 
       .menu-content {
-        padding: 20px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 26px;
+        color: white;
       }
 
       .menu-content h3 {
-        font-size: 23px;
+        font-family: "Playfair Display", serif;
+        font-size: 27px;
+        font-weight: 500;
+        margin-bottom: 15px;
       }
-    }
 
-    /* =========================
-       MOBILE
+      .menu-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 44px;
+        padding: 0 22px;
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        border-radius: 30px;
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .menu-button:hover {
+        background: white;
+        color: var(--primary-dark);
+      }
+
+      /* Room Service là thẻ cuối cùng */
+      .menu-card:last-child {
+        grid-column: 1 / -1;
+        width: calc((100% - 25px) / 2);
+        justify-self: center;
+        min-height: 300px;
+      }
+
+      /* =========================
+       FOOTER
     ========================= */
 
-    @media (max-width: 560px) {
       .footer {
-        padding: 25px 18px 18px;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 30px 4% 20px;
+        font-family: "Montserrat", sans-serif;
       }
 
       .footer-container {
-          gap: 22px;
+        display: grid;
+        grid-template-columns: 1.1fr 1.5fr 0.9fr;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* LOGO */
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
       }
 
       .footer-logo {
-          max-width: 190px;
+        width: 100%;
+        max-width: 240px;
+        object-fit: contain;
       }
 
       .footer-ihg {
-          width: 150px;
+        width: 190px;
+        max-width: 90%;
+        object-fit: contain;
+        color: white;
+      }
+
+      /* HOTEL INFORMATION */
+
+      .best-price {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+        line-height: 1.25;
+      }
+
+      .best-price strong {
+        font-size: 23px;
+      }
+
+      .best-price span {
+        font-size: 12px;
       }
 
       .footer-info h3 {
-          font-size: 15px;
-          margin-bottom: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 5px 0 15px;
+        color: white;
+      }
+
+      .footer-info ul {
+        padding-left: 20px;
+        margin: 0;
       }
 
       .footer-info li {
-          font-size: 11px;
-          margin-bottom: 8px;
+        padding-left: 0;
+        margin-bottom: 9px;
+        line-height: 1.4;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.85);
       }
 
+      .footer-info a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      .footer-info a:hover {
+        color: black;
+      }
+
+      /* SOCIAL MEDIA */
+
       .footer-social {
-          gap: 15px;
-          margin-top: 15px;
+        display: flex;
+        gap: 15px;
+        margin-top: 18px;
       }
 
       .footer-social a {
-          font-size: 20px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 21px;
+        font-weight: bold;
+        transition: all 0.25s ease;
+      }
+
+      .footer-social a:hover {
+        color: black;
+        transform: translateY(-3px);
+      }
+
+      /* REVIEW */
+
+      .footer-review {
+        padding: 5px 10px;
+        max-width: 350px;
       }
 
       .footer-review h3 {
-          font-size: 14px;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 15px;
+      }
+
+      .footer-review-icon {
+        font-size: 23px;
+        color: #fff;
+        margin-bottom: 12px;
       }
 
       .footer-review-title {
-          font-size: 14px;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.5;
+        margin: 0 0 8px;
       }
 
       .footer-review-description {
-          font-size: 11px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 11px;
+        line-height: 1.6;
+        margin: 0 0 15px;
       }
 
+      .review-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: var(--primary-dark);
+        text-decoration: none;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 9px 13px;
+        border-radius: 3px;
+        transition: all 0.25s ease;
+      }
+
+      .review-button:hover {
+        color: black;
+        transform: translateY(-2px);
+      }
+
+      .review-button i {
+        font-size: 11px;
+      }
+
+      /* FOOTER BOTTOM */
+
       .footer-bottom {
+        text-align: center;
+        margin-top: 25px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 11px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-bottom p {
+        margin: 3px 0;
+      }
+      /* =========================
+       TABLET
+    ========================= */
+
+      @media (max-width: 768px) {
+        .footer {
+          padding: 30px 20px 20px;
+        }
+
+        .footer-container {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .footer-brand {
+          align-items: center;
+          gap: 15px;
+        }
+
+        .footer-logo {
+          max-width: 220px;
+        }
+
+        .footer-ihg {
+          width: 170px;
+        }
+
+        .footer-info,
+        .footer-review {
+          text-align: left;
+        }
+
+        .footer-review {
+          max-width: 100%;
+          padding: 5px 0;
+        }
+
+        .footer-bottom {
+          margin-top: 25px;
+          font-size: 11px;
+        }
+
+        .hero {
+          min-height: 500px;
+          background-position: 58% center;
+        }
+
+        .hero-inner {
+          width: 88%;
+          padding: 55px 0 115px;
+        }
+
+        .brand {
+          margin-bottom: 42px;
+        }
+
+        .hero h1 {
+          max-width: 560px;
+        }
+
+        .hero-label {
+          letter-spacing: 3px;
+        }
+
+        .menus {
+          width: 88%;
+          padding-bottom: 60px;
+        }
+
+        .menu-grid {
+          gap: 18px;
+        }
+
+        .menu-card {
+          min-height: 260px;
+        }
+
+        .menu-content {
+          padding: 20px;
+        }
+
+        .menu-content h3 {
+          font-size: 23px;
+        }
+      }
+
+      /* =========================
+       MOBILE
+    ========================= */
+
+      @media (max-width: 560px) {
+        .footer {
+          padding: 25px 18px 18px;
+        }
+
+        .footer-container {
+          gap: 22px;
+        }
+
+        .footer-logo {
+          max-width: 190px;
+        }
+
+        .footer-ihg {
+          width: 150px;
+        }
+
+        .footer-info h3 {
+          font-size: 15px;
+          margin-bottom: 12px;
+        }
+
+        .footer-info li {
+          font-size: 11px;
+          margin-bottom: 8px;
+        }
+
+        .footer-social {
+          gap: 15px;
+          margin-top: 15px;
+        }
+
+        .footer-social a {
+          font-size: 20px;
+        }
+
+        .footer-review h3 {
+          font-size: 14px;
+        }
+
+        .footer-review-title {
+          font-size: 14px;
+        }
+
+        .footer-review-description {
+          font-size: 11px;
+        }
+
+        .footer-bottom {
           margin-top: 20px;
           padding-top: 12px;
           font-size: 10px;
           line-height: 1.6;
-      }
-      .floating-back {
-        left: 16px;
-        bottom: 16px;
-        padding: 11px 15px;
-        font-size: 11px;
+        }
+        .floating-back {
+          left: 16px;
+          bottom: 16px;
+          padding: 11px 15px;
+          font-size: 11px;
+        }
+
+        .hero {
+          min-height: 490px;
+          background-position: 62% center;
+        }
+
+        .hero-inner {
+          width: 88%;
+          padding: 75px 0 100px;
+        }
+
+        .language-switcher {
+          top: 18px;
+          right: 6%;
+        }
+
+        .language-button {
+          min-width: 140px;
+          padding: 9px 12px;
+          font-size: 11px;
+        }
+
+        .language-options {
+          min-width: 140px;
+        }
+
+        .brand {
+          margin-bottom: 38px;
+          letter-spacing: 2px;
+        }
+
+        .brand strong {
+          font-size: 19px;
+          letter-spacing: 3px;
+        }
+
+        .brand span {
+          font-size: 10px;
+          letter-spacing: 2px;
+        }
+
+        .hero h1 {
+          font-size: clamp(36px, 10vw, 48px);
+          max-width: 360px;
+        }
+
+        .hero-subtitle {
+          font-size: 17px;
+          line-height: 1.5;
+          max-width: 320px;
+        }
+
+        .hero-label {
+          font-size: 10px;
+          letter-spacing: 2px;
+          line-height: 1.8;
+        }
+
+        .hero::after {
+          bottom: -105px;
+          height: 140px;
+        }
+
+        .menus {
+          width: 88%;
+          padding-top: 5px;
+          padding-bottom: 45px;
+        }
+
+        .section-heading {
+          margin-bottom: 28px;
+        }
+
+        .eyebrow {
+          font-size: 10px;
+          letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+          font-size: 34px;
+        }
+
+        .section-heading p {
+          font-size: 13px;
+          line-height: 1.7;
+        }
+
+        .menu-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .menu-card,
+        .menu-card:last-child {
+          grid-column: auto;
+          width: 100%;
+          min-height: 235px;
+          border-radius: 14px;
+        }
+
+        .menu-content {
+          padding: 20px;
+        }
+
+        .menu-content h3 {
+          font-size: 25px;
+          margin-bottom: 12px;
+        }
+
+        .menu-button {
+          min-height: 44px;
+          padding: 0 20px;
+          font-size: 11px;
+        }
       }
 
-      .hero {
-        min-height: 490px;
-        background-position: 62% center;
-      }
-
-      .hero-inner {
-        width: 88%;
-        padding: 75px 0 100px;
-      }
-
-      .language-switcher {
-        top: 18px;
-        right: 6%;
-      }
-
-      .language-button {
-        min-width: 140px;
-        padding: 9px 12px;
-        font-size: 11px;
-      }
-
-      .language-options {
-        min-width: 140px;
-      }
-
-      .brand {
-        margin-bottom: 38px;
-        letter-spacing: 2px;
-      }
-
-      .brand strong {
-        font-size: 19px;
-        letter-spacing: 3px;
-      }
-
-      .brand span {
-        font-size: 10px;
-        letter-spacing: 2px;
-      }
-
-      .hero h1 {
-        font-size: clamp(36px, 10vw, 48px);
-        max-width: 360px;
-      }
-
-      .hero-subtitle {
-        font-size: 17px;
-        line-height: 1.5;
-        max-width: 320px;
-      }
-
-      .hero-label {
-        font-size: 10px;
-        letter-spacing: 2px;
-        line-height: 1.8;
-      }
-
-      .hero::after {
-        bottom: -105px;
-        height: 140px;
-      }
-
-      .menus {
-        width: 88%;
-        padding-top: 5px;
-        padding-bottom: 45px;
-      }
-
-      .section-heading {
-        margin-bottom: 28px;
-      }
-
-      .eyebrow {
-        font-size: 10px;
-        letter-spacing: 2px;
-      }
-
-      .section-heading h2 {
-        font-size: 34px;
-      }
-
-      .section-heading p {
-        font-size: 13px;
-        line-height: 1.7;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .menu-card,
-      .menu-card:last-child {
-        grid-column: auto;
-        min-height: 235px;
-        border-radius: 14px;
-      }
-
-      .menu-content {
-        padding: 20px;
-      }
-
-      .menu-content h3 {
-        font-size: 25px;
-        margin-bottom: 12px;
-      }
-
-      .menu-button {
-        min-height: 44px;
-        padding: 0 20px;
-        font-size: 11px;
-      }
-    }
-
-    /* =========================
+      /* =========================
        SMALL MOBILE
     ========================= */
 
-    @media (max-width: 360px) {
-      .hero h1 {
-        font-size: 34px;
+      @media (max-width: 360px) {
+        .hero h1 {
+          font-size: 34px;
+        }
+
+        .menu-card,
+        .menu-card:last-child {
+          min-height: 210px;
+        }
+
+        .menu-content h3 {
+          font-size: 22px;
+        }
       }
+    </style>
+  </head>
 
-      .menu-card,
-      .menu-card:last-child {
-        min-height: 210px;
-      }
-
-      .menu-content h3 {
-        font-size: 22px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header class="hero">
-
-    <div class="language-switcher">
-      <button
-        class="language-button"
-        id="languageButton"
-        type="button"
-        aria-expanded="false"
-      >
-        <img
-          class="language-flag"
-          id="selectedFlag"
-          src="https://flagcdn.com/w40/gb.png"
-          alt="English"
+  <body>
+    <header class="hero">
+      <div class="language-switcher">
+        <button
+          class="language-button"
+          id="languageButton"
+          type="button"
+          aria-expanded="false"
         >
+          <img
+            class="language-flag"
+            id="selectedFlag"
+            src="https://flagcdn.com/w40/gb.png"
+            alt="English"
+          />
 
-        <span class="language-name" id="selectedLanguage">English</span>
+          <span class="language-name" id="selectedLanguage">English</span>
 
-        <span class="language-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </span>
-      </button>
-
-      <div class="language-options" id="languageOptions">
-        <button type="button" class="language-option" data-lang="vn">
-          <img class="language-flag" src="https://flagcdn.com/w40/vn.png" alt="Vietnam">
-          <span>Tiếng Việt</span>
+          <span class="language-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </span>
         </button>
 
-        <button type="button" class="language-option" data-lang="cn">
-          <img class="language-flag" src="https://flagcdn.com/w40/cn.png" alt="China">
-          <span>中文</span>
-        </button>
+        <div class="language-options" id="languageOptions">
+          <button type="button" class="language-option" data-lang="vn">
+            <img
+              class="language-flag"
+              src="https://flagcdn.com/w40/vn.png"
+              alt="Vietnam"
+            />
+            <span>Tiếng Việt</span>
+          </button>
 
-        <button type="button" class="language-option" data-lang="kr">
-          <img class="language-flag" src="https://flagcdn.com/w40/kr.png" alt="Korea">
-          <span>한국어</span>
-        </button>
+          <button type="button" class="language-option" data-lang="cn">
+            <img
+              class="language-flag"
+              src="https://flagcdn.com/w40/cn.png"
+              alt="China"
+            />
+            <span>中文</span>
+          </button>
 
-        <button type="button" class="language-option" data-lang="en">
-          <img class="language-flag" src="https://flagcdn.com/w40/gb.png" alt="English">
-          <span>English</span>
-        </button>
-      </div>
-    </div>
+          <button type="button" class="language-option" data-lang="kr">
+            <img
+              class="language-flag"
+              src="https://flagcdn.com/w40/kr.png"
+              alt="Korea"
+            />
+            <span>한국어</span>
+          </button>
 
-    <div class="hero-inner">
-      <div class="brand">
-        <strong>CROWNE PLAZA</strong>
-        <span>DANANG · AN IHG HOTEL</span>
-      </div>
-
-      <h1>Crowne Plaza Danang</h1>
-
-      <p class="hero-subtitle">
-        International upscale hotel brand of IHG
-      </p>
-
-      <div class="hero-line"></div>
-
-      <p class="hero-label">
-        Restaurant & Resort Menu
-      </p>
-    </div>
-  </header>
-
-  <!-- MENUS -->
-  <main class="menus">
-
-    <div class="section-heading">
-      <div class="eyebrow">Discover our dining</div>
-
-      <h2>Explore Our Menus</h2>
-
-      <p>
-        Choose your destination and enjoy a memorable dining experience.
-      </p>
-    </div>
-
-    <div class="menu-grid">
-
-      <!-- 1. Guest Directory -->
-      <a
-        class="menu-card"
-        href="/menu/guest-directory/"
-        data-base-href="/menu/guest-directory/"
-      >
-        <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-          alt="Resort guest directory"
-          loading="lazy"
-        >
-
-        <div class="menu-content">
-          <h3>Guest Directory</h3>
-
-          <span class="menu-button">
-            VIEW MENU
-            <span aria-hidden="true">→</span>
-          </span>
+          <button type="button" class="language-option" data-lang="en">
+            <img
+              class="language-flag"
+              src="https://flagcdn.com/w40/gb.png"
+              alt="English"
+            />
+            <span>English</span>
+          </button>
         </div>
-      </a>
-
-      <!-- 2. A La Carte -->
-      <a
-        class="menu-card"
-        href="/menu/ala-carte/"
-        data-base-href="/menu/ala-carte/"
-      >
-        <img
-          src="/img/home/FRESH.jpg"
-          alt="A La Carte dining"
-          loading="lazy"
-        >
-
-        <div class="menu-content">
-          <h3>A La Carte</h3>
-
-          <span class="menu-button">
-            VIEW MENU
-            <span aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- 3. Chopstix -->
-      <a
-        class="menu-card"
-        href="/menu/chopstix/"
-        data-base-href="/menu/chopstix/"
-      >
-        <img
-          src="/img/home/CHOPSTIX.jpg"
-          alt="Chopstix Asian cuisine"
-          loading="lazy"
-        >
-
-        <div class="menu-content">
-          <h3>Chopstix</h3>
-
-          <span class="menu-button">
-            VIEW MENU
-            <span aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- 4. Hai Gang -->
-      <a
-        class="menu-card"
-        href="/menu/hai-gang/"
-        data-base-href="/menu/hai-gang/"
-      >
-        <img
-          src="/img/home/HAIGANG.jpg"
-          alt="Hai Gang restaurant"
-          loading="lazy"
-        >
-
-        <div class="menu-content">
-          <h3>Hai Gang</h3>
-
-          <span class="menu-button">
-            VIEW MENU
-            <span aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- 5. Connection Bar -->
-      <a
-        class="menu-card"
-        href="/menu/connection-bar/"
-        data-base-href="/menu/connection-bar/"
-      >
-        <img
-          src="/img/home/CONNECTTION.jpg"
-          alt="Connection Bar"
-          loading="lazy"
-        >
-
-        <div class="menu-content">
-          <h3>Connection Bar</h3>
-
-          <span class="menu-button">
-            VIEW MENU
-            <span aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- 6. Room Service - luôn ở cuối -->
-      <a
-        class="menu-card"
-        href="/menu/room-service/"
-        data-base-href="/menu/room-service/"
-      >
-        <img
-          src="/img/home/ROOMSERVICE.jpg"
-          alt="Room service dining"
-          loading="lazy"
-        >
-
-        <div class="menu-content">
-          <h3>Room Service</h3>
-
-          <span class="menu-button">
-            VIEW MENU
-            <span aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
-
-      <div class="footer-brand">
-        <img
-          src="/img/footer/logo2.png"
-          alt="Crowne Plaza"
-          class="footer-logo"
-        >
-
-        <img
-          src="/img/footer/logo-ihg.png"
-          alt="IHG One Rewards"
-          class="footer-ihg"
-        >
       </div>
 
-      <div class="footer-info">
-        <h3>CROWNE PLAZA DA NANG</h3>
+      <div class="hero-inner">
+        <div class="brand">
+          <strong>CROWNE PLAZA</strong>
+          <span>DANANG · AN IHG HOTEL</span>
+        </div>
 
-        <ul>
-          <li id="footerAddress">
-    Lô 8 Võ Nguyên Giáp, Khuê Mỹ,
-    Ngũ Hành Sơn, Đà Nẵng
-</li>
+        <h1>Crowne Plaza Danang</h1>
 
-          <li>(+84) 236 391 8888</li>
+        <p class="hero-subtitle">International upscale hotel brand of IHG</p>
 
-          <li>
-            <a href="mailto:sales@cpdanang.com">
-              sales@cpdanang.com
+        <div class="hero-line"></div>
+
+        <p class="hero-label">Restaurant & Resort Menu</p>
+      </div>
+    </header>
+
+    <!-- MENUS -->
+    <main class="menus">
+      <div class="section-heading">
+        <div class="eyebrow">Discover our dining</div>
+
+        <h2>Explore Our Menus</h2>
+
+        <p>Choose your destination and enjoy a memorable dining experience.</p>
+      </div>
+
+      <div class="menu-grid">
+        <!-- 1. Guest Directory -->
+        <a
+          class="menu-card"
+          href="/menu/guest-directory/"
+          data-base-href="/menu/guest-directory/"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+            alt="Resort guest directory"
+            loading="lazy"
+          />
+
+          <div class="menu-content">
+            <h3>Guest Directory</h3>
+
+            <span class="menu-button">
+              VIEW MENU
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- 2. A La Carte -->
+        <a
+          class="menu-card"
+          href="/menu/ala-carte/"
+          data-base-href="/menu/ala-carte/"
+        >
+          <img
+            src="/img/home/HAIGANG.jpg"
+            alt="A La Carte dining"
+            loading="lazy"
+          />
+
+          <div class="menu-content">
+            <h3>A La Carte</h3>
+
+            <span class="menu-button">
+              VIEW MENU
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- 3. Chopstix -->
+        <a
+          class="menu-card"
+          href="/menu/chopstix/"
+          data-base-href="/menu/chopstix/"
+        >
+          <img
+            src="/img/home/CHOPSTIX.jpg"
+            alt="Chopstix Asian cuisine"
+            loading="lazy"
+          />
+
+          <div class="menu-content">
+            <h3>Chopstix</h3>
+
+            <span class="menu-button">
+              VIEW MENU
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- 5. Connection Bar -->
+        <a
+          class="menu-card"
+          href="/menu/connection-bar/"
+          data-base-href="/menu/connection-bar/"
+        >
+          <img
+            src="/img/home/CONNECTTION.jpg"
+            alt="Connection Bar"
+            loading="lazy"
+          />
+
+          <div class="menu-content">
+            <h3>Connection Bar</h3>
+
+            <span class="menu-button">
+              VIEW MENU
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- 6. Room Service - luôn ở cuối -->
+        <a
+          class="menu-card"
+          href="/menu/room-service/"
+          data-base-href="/menu/room-service/"
+        >
+          <img
+            src="/img/home/ROOMSERVICE.jpg"
+            alt="Room service dining"
+            loading="lazy"
+          />
+
+          <div class="menu-content">
+            <h3>Room Service</h3>
+
+            <span class="menu-button">
+              VIEW MENU
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="/img/footer/logo2.png"
+            alt="Crowne Plaza"
+            class="footer-logo"
+          />
+
+          <img
+            src="/img/footer/logo-ihg.png"
+            alt="IHG One Rewards"
+            class="footer-ihg"
+          />
+        </div>
+
+        <div class="footer-info">
+          <h3>CROWNE PLAZA DA NANG</h3>
+
+          <ul>
+            <li id="footerAddress">
+              Lô 8 Võ Nguyên Giáp, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng
+            </li>
+
+            <li>(+84) 236 391 8888</li>
+
+            <li>
+              <a href="mailto:sales@cpdanang.com"> sales@cpdanang.com </a>
+            </li>
+
+            <li>
+              <a href="mailto:reservation@cpdanang.com">
+                reservation@cpdanang.com
+              </a>
+            </li>
+          </ul>
+
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/CrownePlazaDanangVietnam"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
             </a>
-          </li>
 
-          <li>
-            <a href="mailto:reservation@cpdanang.com">
-              reservation@cpdanang.com
+            <a
+              href="https://www.instagram.com/crowneplazadanang"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-instagram"></i>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
 
-        <div class="footer-social">
-          <a
-            href="https://www.facebook.com/CrownePlazaDanangVietnam"
-            aria-label="Facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
+        <div class="footer-review">
+          <h3 id="footerReviewHeading">TRẢI NGHIỆM ẨM THỰC</h3>
+
+          <div class="footer-review-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+
+          <p class="footer-review-title" id="footerReviewTitle">
+            Những trải nghiệm ẩm thực hấp dẫn đang chờ đón bạn!
+          </p>
+
+          <p class="footer-review-description" id="footerReviewDescription">
+            Vui lòng liên hệ với chúng tôi để được tư vấn và tận hưởng những bữa
+            ăn tuyệt vời tại Crowne Plaza Danang.
+          </p>
 
           <a
-            href="https://www.instagram.com/crowneplazadanang"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+842363918888"
+            class="review-button"
+            id="footerReviewButton"
           >
-            <i class="fa-brands fa-instagram"></i>
+            LIÊN HỆ VỚI CHÚNG TÔI
+
+            <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
 
-      <div class="footer-review">
+      <div class="footer-bottom">
+        <p id="footerOwnership">
+          Khách sạn thuộc quyền sở hữu của CÔNG TY TNHH ĐẦU TƯ VÀ PHÁT TRIỂN
+          SILVER SHORES
+        </p>
 
-    <h3 id="footerReviewHeading">
-        TRẢI NGHIỆM ẨM THỰC
-    </h3>
+        <p id="footerOperator">Vận hành bởi Tập đoàn IHG Hotels & Resorts</p>
+      </div>
+    </footer>
 
-    <div class="footer-review-icon">
-        <i class="fa-solid fa-utensils"></i>
-    </div>
-
-    <p class="footer-review-title" id="footerReviewTitle">
-        Những trải nghiệm ẩm thực hấp dẫn đang chờ đón bạn!
-    </p>
-
-    <p class="footer-review-description" id="footerReviewDescription">
-        Vui lòng liên hệ với chúng tôi để được tư vấn
-        và tận hưởng những bữa ăn tuyệt vời tại
-        Crowne Plaza Danang.
-    </p>
-
-    <a href="tel:+842363918888"
-       class="review-button"
-       id="footerReviewButton">
-
-        LIÊN HỆ VỚI CHÚNG TÔI
-
-        <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-</div>
-
-    </div>
-
-    <div class="footer-bottom">
-     <p id="footerOwnership">
-    Khách sạn thuộc quyền sở hữu của CÔNG TY TNHH ĐẦU TƯ VÀ PHÁT TRIỂN SILVER SHORES
-</p>
-
-<p id="footerOperator">
-    Vận hành bởi Tập đoàn IHG Hotels & Resorts
-</p>
-    </div>
-  </footer>
-
-  <script>
-    /* =========================
+    <script>
+      /* =========================
        TRANSLATIONS
     ========================= */
 
-    
-const translations = {
-  vn: {
-    subtitle: "Thương hiệu khách sạn cao cấp quốc tế thuộc IHG",
-    menuLabel: "Thực đơn Nhà hàng & Khu nghỉ dưỡng",
-    eyebrow: "Khám phá ẩm thực",
-    heading: "Khám Phá Thực Đơn",
-    description: "Lựa chọn điểm đến và tận hưởng trải nghiệm ẩm thực đáng nhớ.",
-    guest: "Thông Tin Khách Sạn",
-    alaCarte: "Thực Đơn A La Carte",
-    chopstix: "Chopstix",
-    haiGang: "Hai Gang",
-    connectionBar: "Connection Bar",
-    roomService: "Dịch Vụ Ăn Tại Phòng",
-    button: "XEM THỰC ĐƠN",
-    footer: "© 2026 Crowne Plaza Danang · Khách sạn thuộc IHG",
-    enjoy: "Chúc Quý khách có kỳ nghỉ tuyệt vời",
+      const translations = {
+        vn: {
+          subtitle: "Thương hiệu khách sạn cao cấp quốc tế thuộc IHG",
+          menuLabel: "Thực đơn Nhà hàng & Khu nghỉ dưỡng",
+          eyebrow: "Khám phá ẩm thực",
+          heading: "Khám Phá Thực Đơn",
+          description:
+            "Lựa chọn điểm đến và tận hưởng trải nghiệm ẩm thực đáng nhớ.",
+          guest: "Thông Tin Khách Sạn",
+          alaCarte: "Thực Đơn A La Carte",
+          chopstix: "Chopstix",
+          connectionBar: "Connection Bar",
+          roomService: "Dịch Vụ Ăn Tại Phòng",
+          button: "XEM THỰC ĐƠN",
+          guestButton: "XEM THÔNG TIN",
+          footer: "© 2026 Crowne Plaza Danang · Khách sạn thuộc IHG",
+          enjoy: "Chúc Quý khách có kỳ nghỉ tuyệt vời",
 
-    footerReviewHeading: "TRẢI NGHIỆM ẨM THỰC",
-    footerReviewTitle: "Những trải nghiệm ẩm thực hấp dẫn đang chờ đón bạn!",
-    footerReviewDescription: "Vui lòng liên hệ với chúng tôi để được tư vấn và tận hưởng những bữa ăn tuyệt vời tại Crowne Plaza Danang.",
-    footerReviewButton: "LIÊN HỆ VỚI CHÚNG TÔI",
+          footerReviewHeading: "TRẢI NGHIỆM ẨM THỰC",
+          footerReviewTitle:
+            "Những trải nghiệm ẩm thực hấp dẫn đang chờ đón bạn!",
+          footerReviewDescription:
+            "Vui lòng liên hệ với chúng tôi để được tư vấn và tận hưởng những bữa ăn tuyệt vời tại Crowne Plaza Danang.",
+          footerReviewButton: "LIÊN HỆ VỚI CHÚNG TÔI",
 
-    footerOwnership: "Khách sạn thuộc quyền sở hữu của CÔNG TY TNHH ĐẦU TƯ VÀ PHÁT TRIỂN SILVER SHORES",
-    footerOperator: "Vận hành bởi Tập đoàn IHG Hotels & Resorts",
-    footerAddress: "Lô 8 Võ Nguyên Giáp, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng"
-  },
+          footerOwnership:
+            "Khách sạn thuộc quyền sở hữu của CÔNG TY TNHH ĐẦU TƯ VÀ PHÁT TRIỂN SILVER SHORES",
+          footerOperator: "Vận hành bởi Tập đoàn IHG Hotels & Resorts",
+          footerAddress: "Lô 8 Võ Nguyên Giáp, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng",
+        },
 
-  cn: {
-    subtitle: "IHG 旗下国际高端酒店品牌",
-    menuLabel: "餐厅及度假村菜单",
-    eyebrow: "探索美食",
-    heading: "探索我们的菜单",
-    description: "选择您心仪的餐饮场所，开启难忘的美食体验。",
-    guest: "酒店信息",
-    alaCarte: "Fresh 餐厅菜单",
-    chopstix: "Chopstix",
-    haiGang: "Hai Gang",
-    connectionBar: "Connection Bar",
-    roomService: "客房送餐服务",
-    button: "查看菜单",
-    footer: "© 2026 Crowne Plaza Danang · IHG 旗下酒店",
-    enjoy: "祝您入住愉快",
+        cn: {
+          subtitle: "IHG 旗下国际高端酒店品牌",
+          menuLabel: "餐厅及度假村菜单",
+          eyebrow: "探索美食",
+          heading: "探索我们的菜单",
+          description: "选择您心仪的餐饮场所，开启难忘的美食体验。",
+          guest: "酒店信息",
+          alaCarte: "海港单点菜单",
+          chopstix: "Chopstix",
+          connectionBar: "Connection Bar",
+          roomService: "客房送餐服务",
+          button: "查看菜单",
+          guestButton: "查看酒店信息",
+          footer: "© 2026 Crowne Plaza Danang · IHG 旗下酒店",
+          enjoy: "祝您入住愉快",
 
-    footerReviewHeading: "餐饮体验",
-    footerReviewTitle: "精彩纷呈的美食体验正等您来探索！",
-    footerReviewDescription: "欢迎联系我们，获取相关咨询，并在岘港皇冠假日酒店享受美妙的餐饮体验。",
-    footerReviewButton: "联系我们",
+          footerReviewHeading: "餐饮体验",
+          footerReviewTitle: "精彩纷呈的美食体验正等您来探索！",
+          footerReviewDescription:
+            "欢迎联系我们，获取相关咨询，并在岘港皇冠假日酒店享受美妙的餐饮体验。",
+          footerReviewButton: "联系我们",
 
-    footerOwnership: "酒店归 SILVER SHORES 投资与发展有限责任公司所有",
-    footerOperator: "由 IHG Hotels & Resorts 集团运营",
-    footerAddress: "越南岘港市五行山郡奎美坊武元甲路8号"
-  },
+          footerOwnership: "酒店归 SILVER SHORES 投资与发展有限责任公司所有",
+          footerOperator: "由 IHG Hotels & Resorts 集团运营",
+          footerAddress: "越南岘港市五行山郡奎美坊武元甲路8号",
+        },
 
-  kr: {
-    subtitle: "IHG의 글로벌 프리미엄 호텔 브랜드",
-    menuLabel: "레스토랑 및 리조트 메뉴",
-    eyebrow: "미식의 세계를 만나보세요",
-    heading: "다양한 메뉴 둘러보기",
-    description: "원하시는 다이닝 장소를 선택하고 잊지 못할 미식 경험을 즐겨보세요.",
-    guest: "호텔 안내",
-    alaCarte: "일품 메뉴",
-    chopstix: "Chopstix",
-    haiGang: "Hai Gang",
-    connectionBar: "Connection Bar",
-    roomService: "룸서비스",
-    button: "메뉴 보기",
-    footer: "© 2026 Crowne Plaza Danang · IHG 호텔",
-    enjoy: "즐거운 투숙 되시기 바랍니다",
+        kr: {
+          subtitle: "IHG의 글로벌 프리미엄 호텔 브랜드",
+          menuLabel: "레스토랑 및 리조트 메뉴",
+          eyebrow: "미식의 세계를 만나보세요",
+          heading: "다양한 메뉴 둘러보기",
+          description:
+            "원하시는 다이닝 장소를 선택하고 잊지 못할 미식 경험을 즐겨보세요.",
+          guest: "호텔 안내",
+          alaCarte: "일품 메뉴",
+          chopstix: "Chopstix",
+          connectionBar: "Connection Bar",
+          roomService: "룸서비스",
+          button: "메뉴 보기",
+          guestButton: "호텔 정보 보기",
+          footer: "© 2026 Crowne Plaza Danang · IHG 호텔",
+          enjoy: "즐거운 투숙 되시기 바랍니다",
 
-    footerReviewHeading: "다이닝 경험",
-    footerReviewTitle: "특별한 미식 경험이 여러분을 기다립니다!",
-    footerReviewDescription: "크라운 플라자 다낭에서 멋진 다이닝 경험을 즐기실 수 있도록 언제든지 문의해 주세요.",
-    footerReviewButton: "문의하기",
+          footerReviewHeading: "다이닝 경험",
+          footerReviewTitle: "특별한 미식 경험이 여러분을 기다립니다!",
+          footerReviewDescription:
+            "크라운 플라자 다낭에서 멋진 다이닝 경험을 즐기실 수 있도록 언제든지 문의해 주세요.",
+          footerReviewButton: "문의하기",
 
-    footerOwnership: "호텔 소유 및 운영 주체: SILVER SHORES 투자개발 유한회사",
-    footerOperator: "IHG Hotels & Resorts 그룹에서 운영",
-    footerAddress: "베트남 다낭시 응우하인선군 쿠에미동 보응우옌잡 거리 8번지"
-  },
+          footerOwnership:
+            "호텔 소유 및 운영 주체: SILVER SHORES 투자개발 유한회사",
+          footerOperator: "IHG Hotels & Resorts 그룹에서 운영",
+          footerAddress:
+            "베트남 다낭시 응우하인선군 쿠에미동 보응우옌잡 거리 8번지",
+        },
 
-  en: {
-    subtitle: "An international upscale hotel brand by IHG",
-    menuLabel: "Restaurant & Resort Menus",
-    eyebrow: "Discover Our Dining",
-    heading: "Explore Our Menus",
-    description: "Choose your dining destination and enjoy a memorable culinary experience.",
-    guest: "Hotel Information",
-    alaCarte: "A La Carte Menu",
-    chopstix: "Chopstix",
-    haiGang: "Hai Gang",
-    connectionBar: "Connection Bar",
-    roomService: "In-Room Dining",
-    button: "VIEW MENU",
-    footer: "© 2026 Crowne Plaza Danang · An IHG Hotel",
-    enjoy: "We Wish You a Wonderful Stay",
+        en: {
+          subtitle: "An international upscale hotel brand by IHG",
+          menuLabel: "Restaurant & Resort Menus",
+          eyebrow: "Discover Our Dining",
+          heading: "Explore Our Menus",
+          description:
+            "Choose your dining destination and enjoy a memorable culinary experience.",
+          guest: "Hotel Information",
+          alaCarte: "A La Carte Menu",
+          chopstix: "Chopstix",
+          connectionBar: "Connection Bar",
+          roomService: "In-Room Dining",
+          button: "VIEW MENU",
+          guestButton: "VIEW INFORMATION",
+          footer: "© 2026 Crowne Plaza Danang · An IHG Hotel",
+          enjoy: "We Wish You a Wonderful Stay",
 
-    footerReviewHeading: "DINING EXPERIENCE",
-    footerReviewTitle: "Exciting culinary experiences are waiting for you!",
-    footerReviewDescription: "Please contact us for assistance and enjoy exceptional dining experiences at Crowne Plaza Danang.",
-    footerReviewButton: "CONTACT US",
+          footerReviewHeading: "DINING EXPERIENCE",
+          footerReviewTitle:
+            "Exciting culinary experiences are waiting for you!",
+          footerReviewDescription:
+            "Please contact us for assistance and enjoy exceptional dining experiences at Crowne Plaza Danang.",
+          footerReviewButton: "CONTACT US",
 
-    footerOwnership: "Hotel owned by SILVER SHORES INVESTMENT AND DEVELOPMENT COMPANY LIMITED",
-    footerOperator: "Operated by IHG Hotels & Resorts",
-    footerAddress: "Lot 8 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Da Nang, Vietnam"
-  }
-};
+          footerOwnership:
+            "Hotel owned by SILVER SHORES INVESTMENT AND DEVELOPMENT COMPANY LIMITED",
+          footerOperator: "Operated by IHG Hotels & Resorts",
+          footerAddress:
+            "Lot 8 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Da Nang, Vietnam",
+        },
+      };
 
-
-    /* =========================
+      /* =========================
        LANGUAGE DISPLAY
     ========================= */
 
-    const languageDisplay = {
-      vn: {
-        flag: "https://flagcdn.com/w40/vn.png",
-        name: "Tiếng Việt",
-        alt: "Vietnam"
-      },
+      const languageDisplay = {
+        vn: {
+          flag: "https://flagcdn.com/w40/vn.png",
+          name: "Tiếng Việt",
+          alt: "Vietnam",
+        },
 
-      cn: {
-        flag: "https://flagcdn.com/w40/cn.png",
-        name: "中文",
-        alt: "China"
-      },
+        cn: {
+          flag: "https://flagcdn.com/w40/cn.png",
+          name: "中文",
+          alt: "China",
+        },
 
-      kr: {
-        flag: "https://flagcdn.com/w40/kr.png",
-        name: "한국어",
-        alt: "Korea"
-      },
+        kr: {
+          flag: "https://flagcdn.com/w40/kr.png",
+          name: "한국어",
+          alt: "Korea",
+        },
 
-      en: {
-        flag: "https://flagcdn.com/w40/gb.png",
-        name: "English",
-        alt: "United Kingdom"
-      }
-    };
+        en: {
+          flag: "https://flagcdn.com/w40/gb.png",
+          name: "English",
+          alt: "United Kingdom",
+        },
+      };
 
-    const languageSwitcher = document.querySelector(".language-switcher");
-    const languageButton = document.getElementById("languageButton");
-    const selectedFlag = document.getElementById("selectedFlag");
-    const selectedLanguage = document.getElementById("selectedLanguage");
+      const languageSwitcher = document.querySelector(".language-switcher");
+      const languageButton = document.getElementById("languageButton");
+      const selectedFlag = document.getElementById("selectedFlag");
+      const selectedLanguage = document.getElementById("selectedLanguage");
 
-    /* =========================
+      /* =========================
        UPDATE DROPDOWN
     ========================= */
 
-    function updateLanguageDropdown(language) {
-      const selected = languageDisplay[language] || languageDisplay.en;
+      function updateLanguageDropdown(language) {
+        const selected = languageDisplay[language] || languageDisplay.en;
 
-      selectedFlag.src = selected.flag;
-      selectedFlag.alt = selected.alt;
-      selectedLanguage.textContent = selected.name;
+        selectedFlag.src = selected.flag;
+        selectedFlag.alt = selected.alt;
+        selectedLanguage.textContent = selected.name;
 
-      document.querySelectorAll(".language-option").forEach(option => {
-        option.classList.toggle(
-          "active",
-          option.dataset.lang === language
-        );
-      });
-    }
+        document.querySelectorAll(".language-option").forEach((option) => {
+          option.classList.toggle("active", option.dataset.lang === language);
+        });
+      }
 
-    /* =========================
+      /* =========================
        CHANGE LANGUAGE
     ========================= */
 
-    function changeLanguage(language) {
-      const text = translations[language];
+      function changeLanguage(language) {
+        const text = translations[language];
 
-      if (!text) return;
+        if (!text) return;
 
-      document.querySelector(".hero-subtitle").textContent = text.subtitle;
-      document.querySelector(".hero-label").textContent = text.menuLabel;
-      document.querySelector(".eyebrow").textContent = text.eyebrow;
-      document.querySelector(".section-heading h2").textContent = text.heading;
-      document.querySelector(".section-heading p").textContent = text.description;
+        document.querySelector(".hero-subtitle").textContent = text.subtitle;
+        document.querySelector(".hero-label").textContent = text.menuLabel;
+        document.querySelector(".eyebrow").textContent = text.eyebrow;
+        document.querySelector(".section-heading h2").textContent =
+          text.heading;
+        document.querySelector(".section-heading p").textContent =
+          text.description;
 
-      // Thứ tự phải khớp với thứ tự 6 menu trong HTML
-      const menuTitles = [
-        text.guest,
-        text.alaCarte,
-        text.chopstix,
-        text.haiGang,
-        text.connectionBar,
-        text.roomService
-      ];
+        // Thứ tự phải khớp với thứ tự 6 menu trong HTML
+        const menuTitles = [
+          text.guest,
+          text.alaCarte,
+          text.chopstix,
+          text.connectionBar,
+          text.roomService,
+        ];
 
-      document.querySelectorAll(".menu-card").forEach((card, index) => {
-        const title = card.querySelector("h3");
-        const button = card.querySelector(".menu-button");
+        document.querySelectorAll(".menu-card").forEach((card, index) => {
+          const title = card.querySelector("h3");
+          const button = card.querySelector(".menu-button");
 
-        if (title && menuTitles[index]) {
-          title.textContent = menuTitles[index];
-        }
+          if (title && menuTitles[index]) {
+            title.textContent = menuTitles[index];
+          }
 
-        if (button) {
-          button.innerHTML = `
-            ${text.button}
-            <span aria-hidden="true">→</span>
-          `;
-        }
+          if (button) {
+            const baseHref = card.dataset.baseHref;
 
-        // Giữ nguyên URL menu và chỉ thêm ngôn ngữ
-        const baseHref = card.dataset.baseHref;
-if (baseHref.includes("connection-bar")) {
-        card.href = baseHref;
-    } else {
-       
-          card.href = `${baseHref}${language}/`;
-        }
-      });
+            // Guest Directory hiển thị nút Xem thông tin
+            const buttonText = baseHref.includes("guest-directory")
+              ? text.guestButton
+              : text.button;
 
-      // Cập nhật footer riêng, không ghi đè địa chỉ khách sạn
-      
-document.getElementById("footerReviewHeading").textContent =
-    text.footerReviewHeading;
+            button.innerHTML = `
+        ${buttonText}
+        <span aria-hidden="true">→</span>
+    `;
+          }
 
-document.getElementById("footerReviewTitle").textContent =
-    text.footerReviewTitle;
+          // Giữ nguyên URL menu và chỉ thêm ngôn ngữ
+          const baseHref = card.dataset.baseHref;
+          if (baseHref.includes("connection-bar")) {
+            card.href = baseHref;
+          } else {
+            card.href = `${baseHref}${language}/`;
+          }
+        });
 
-document.getElementById("footerReviewDescription").textContent =
-    text.footerReviewDescription;
+        // Cập nhật footer riêng, không ghi đè địa chỉ khách sạn
 
-document.getElementById("footerReviewButton").innerHTML = `
+        document.getElementById("footerReviewHeading").textContent =
+          text.footerReviewHeading;
+
+        document.getElementById("footerReviewTitle").textContent =
+          text.footerReviewTitle;
+
+        document.getElementById("footerReviewDescription").textContent =
+          text.footerReviewDescription;
+
+        document.getElementById("footerReviewButton").innerHTML = `
     ${text.footerReviewButton}
     <i class="fa-solid fa-arrow-right"></i>
 `;
-// Cập nhật thông tin sở hữu và vận hành
-document.getElementById("footerOwnership").textContent =
-    text.footerOwnership;
+        // Cập nhật thông tin sở hữu và vận hành
+        document.getElementById("footerOwnership").textContent =
+          text.footerOwnership;
 
-document.getElementById("footerOperator").textContent =
-    text.footerOperator;
-      document.documentElement.lang = language;
-document.getElementById("footerAddress").textContent =
-    text.footerAddress;
-      localStorage.setItem("preferredLanguage", language);
-    }
+        document.getElementById("footerOperator").textContent =
+          text.footerOperator;
+        document.documentElement.lang = language;
+        document.getElementById("footerAddress").textContent =
+          text.footerAddress;
+        localStorage.setItem("preferredLanguage", language);
+      }
 
-    /* =========================
+      /* =========================
        DROPDOWN EVENTS
     ========================= */
 
-    languageButton.addEventListener("click", () => {
-      const isOpen = languageSwitcher.classList.toggle("open");
+      languageButton.addEventListener("click", () => {
+        const isOpen = languageSwitcher.classList.toggle("open");
 
-      languageButton.setAttribute("aria-expanded", isOpen);
-    });
-
-    document.querySelectorAll(".language-option").forEach(option => {
-      option.addEventListener("click", () => {
-        const language = option.dataset.lang;
-
-        changeLanguage(language);
-        updateLanguageDropdown(language);
-
-        languageSwitcher.classList.remove("open");
-        languageButton.setAttribute("aria-expanded", "false");
+        languageButton.setAttribute("aria-expanded", isOpen);
       });
-    });
 
-    document.addEventListener("click", event => {
-      if (!languageSwitcher.contains(event.target)) {
-        languageSwitcher.classList.remove("open");
-        languageButton.setAttribute("aria-expanded", "false");
-      }
-    });
+      document.querySelectorAll(".language-option").forEach((option) => {
+        option.addEventListener("click", () => {
+          const language = option.dataset.lang;
 
-    /* =========================
+          changeLanguage(language);
+          updateLanguageDropdown(language);
+
+          languageSwitcher.classList.remove("open");
+          languageButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!languageSwitcher.contains(event.target)) {
+          languageSwitcher.classList.remove("open");
+          languageButton.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      /* =========================
        LOAD SAVED LANGUAGE
     ========================= */
 
-    const savedLanguage =
-      localStorage.getItem("preferredLanguage") || "en";
+      const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
 
-    changeLanguage(savedLanguage);
-    updateLanguageDropdown(savedLanguage);
-  </script>
-
-</body>
+      changeLanguage(savedLanguage);
+      updateLanguageDropdown(savedLanguage);
+    </script>
+  </body>
 </html>
